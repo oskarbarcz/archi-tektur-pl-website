@@ -1,0 +1,11 @@
+.projects {
+    height: 800px;
+    background: #222;
+    transform: skewY(3deg);
+
+
+    &__container {
+        transform: skewY(-3deg);
+        max-width: 1200px;
+    }
+}
