@@ -2,6 +2,7 @@
     height: 800px;
     background: #222;
     transform: skewY(3deg);
+    @include shadow(5);
 
 
     &__container {
