@@ -1,0 +1,54 @@
+.landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        max-width: 1200px;
+    }
+
+    &__element {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        margin: 20px;
+        height: 300px;
+        //@include shadow(2);
+    }
+
+    &__name {
+        font-family: "Yantramanav", sans-serif;
+        font-size: 60px;
+        width: auto;
+
+    }
+
+    &__title {
+        width: auto;
+        font-size: 18px;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: #ed2939;
+    }
+
+    &__text {
+        margin: 10px 0;
+        text-align: justify;
+        line-height: 1.3;
+    }
+
+    &__video {
+        @include shadow(2);
+        width: 500px;
+        height: 281px;
+    }
+}
+
+
+
+
