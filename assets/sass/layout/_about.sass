@@ -13,51 +13,6 @@
     flex-direction: column
     color: $dark-grey
     width: 49%
-    position: relative
-    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
-    &:hover .about_image-overlay, &:focus .about_image-overlay
-      width: 100%
-      height: 100%
-      transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
-      background: rgba(1, 1, 1, 0.7)
-      visibility: visible
-      @include shadow(3)
-    &:hover .about_image-help, &:focus .about_image-help
-      transition: color 0.3s ease-in-out
-      color: #FFFFFF
-  &_image
-    border-radius: 15px
-    width: 100%
-    height: auto
-    object-fit: cover
-    @include shadow(1)
-    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
-  &_image-overlay
-    letter-spacing: 2px
-    border-radius: 15px
-    display: flex
-    flex-direction: column
-    top: 0
-    left: 0
-    visibility: hidden
-    position: absolute
-    width: 0
-    height: 0
-    background: transparent
-    color: #FFFFFF
-    justify-content: center
-    align-items: center
-    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
-  &_overlay-icon
-    height: 50px
-    margin: 15px
-  &_image-help
-    transition: color 0.3s ease-in-out
-    position: absolute
-    bottom: 20px
-    text-align: center
-    font-size: 0.8em
-    width: 100%
   &_name
     font-size: 2.5em
   &_title
