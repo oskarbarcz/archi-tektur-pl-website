@@ -6,26 +6,31 @@
     display: flex
     flex-direction: row
     justify-content: space-between
+    align-items: center
     margin: 150px auto
   &_element
     display: flex
     flex-direction: column
-    align-items: center
     color: $dark-grey
-    width: 47%
+    width: 49%
     position: relative
-    transition: background 0.2s ease-in-out
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
     &:hover .about_image-overlay
       width: 100%
       height: 100%
-      transition: background 0.2s ease-in-out
-      background: rgba(1, 1, 1, 0.6)
+      transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
+      background: rgba(1, 1, 1, 0.7)
       visibility: visible
+      @include shadow(3)
+    &:hover .about_image-help
+      transition: color 0.3s ease-in-out
+      color: #FFFFFF
   &_image
     width: 100%
     height: auto
     object-fit: cover
     @include shadow(1)
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
   &_image-overlay
     display: flex
     flex-direction: column
@@ -39,21 +44,28 @@
     color: #FFFFFF
     justify-content: center
     align-items: center
-    transition: background 0.2s ease-in-out
-  &_overlay-yt
-    display: flex
-    align-items: center
-    font-size: 3em
-  &_overlay-yt .fab
-    color: #ff2800
-  &_subtitle
-    text-transform: uppercase
-    color: $mid-grey
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
+  &_overlay-icon
+    height: 50px
+    margin: 15px
+  &_image-help
+    transition: color 0.3s ease-in-out
+    position: absolute
+    bottom: 10px
+    text-align: center
+    font-size: 0.8em
+    width: 100%
   &_name
     font-size: 2.5em
+  &_title
+    font-size: 1.1em
+    margin: -5px 5px 0
+    text-transform: uppercase
+    color: $brand-color
+    font-family: $title-font-stack
   &_text
     margin: 5px
     font-size: 18px
-    line-height: 120%
+    line-height: 130%
 
  
