@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="180x180" href="/media/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/media/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="194x194" href="/media/favicons/favicon-194x194.png">
@@ -16,6 +17,17 @@
     <meta name="msapplication-TileImage" content="/media/favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="/media/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+    <meta property="fb:app_id" content="123456789">
+    <meta property="og:url" content="https://archi-tektur.pl/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="archi_tektur | oprogramowanie dla firm">
+    <meta property="og:image" content="https://archi-tektur.pl/{{asset('/media/logo/horizontal-color.svg')}}">
+    <meta property="og:description" content="Oskar Barcz | Usługi programistyczne dla Ciebie">
+    <meta property="og:site_name" content="archi_tektur">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="article:author" content="Oskar Barcz">
+
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"

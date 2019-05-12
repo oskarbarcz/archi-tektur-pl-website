@@ -2,7 +2,6 @@
   position: sticky
   top: 0
   width: 100%
-  height: 70px
   @include shadow(1)
   background: #FFFFFF
   display: flex
@@ -11,29 +10,43 @@
   align-items: center
   z-index: 10000
   padding: 0 20%
+  @media screen and (max-width: 1200px)
+    justify-content: center
+    flex-direction: column
+    padding: 0
   &_mobile-belt
     display: flex
     justify-content: space-between
     align-items: center
-
+    @media screen and (max-width: 1200px)
+      display: revert
   &_hamburger
     display: inline-block
     color: $dark-grey
-    margin: 5px 0
+    margin: 0 20px
     padding: 5px
     font-size: 1.2em
     visibility: hidden
-
-
+    @media screen and (max-width: 1200px)
+      visibility: visible
   &_logo
     height: 50px
+    margin: 5px 0
     transition: ease-in-out 0.1s
     &:hover, &:focus
       transform: scale(1.05)
   &_links
     display: flex
+    background: #FFFFFF
     flex-direction: row
     align-items: center
+    @media screen and (max-width: 1200px)
+      display: none
+      flex-direction: row
+    @media screen and (max-width: 500px)
+      flex-direction: column
+    &--opened
+      display: flex
   &_link
     font-family: $title-font-stack
     text-transform: uppercase
@@ -44,6 +57,9 @@
     font-size: 1.3em
     height: 70px
     transition: 0.1s ease-in-out
+    @media screen and (max-width: 1200px)
+      padding: 2px
+      height: auto
     &:focus, &:hover
       transform: scale(1.05)
       color: $brand-color
