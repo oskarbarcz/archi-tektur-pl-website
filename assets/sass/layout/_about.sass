@@ -1,0 +1,59 @@
+.about
+  font-family: Helvetica, sans-serif
+  margin-bottom: -60px
+  padding-bottom: 60px
+  &_container
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin: 150px auto
+  &_element
+    display: flex
+    flex-direction: column
+    align-items: center
+    color: $dark-grey
+    width: 47%
+    position: relative
+    transition: background 0.2s ease-in-out
+    &:hover .about_image-overlay
+      width: 100%
+      height: 100%
+      transition: background 0.2s ease-in-out
+      background: rgba(1, 1, 1, 0.6)
+      visibility: visible
+  &_image
+    width: 100%
+    height: auto
+    object-fit: cover
+    @include shadow(1)
+  &_image-overlay
+    display: flex
+    flex-direction: column
+    top: 0
+    left: 0
+    visibility: hidden
+    position: absolute
+    width: 0
+    height: 0
+    background: transparent
+    color: #FFFFFF
+    justify-content: center
+    align-items: center
+    transition: background 0.2s ease-in-out
+  &_overlay-yt
+    display: flex
+    align-items: center
+    font-size: 3em
+  &_overlay-yt .fab
+    color: #ff2800
+  &_subtitle
+    text-transform: uppercase
+    color: $mid-grey
+  &_name
+    font-size: 2.5em
+  &_text
+    margin: 5px
+    font-size: 18px
+    line-height: 120%
+
+ 
