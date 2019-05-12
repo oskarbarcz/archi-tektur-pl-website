@@ -1,0 +1,35 @@
+.navigation
+  position: sticky
+  top: 0
+  width: 100%
+  height: 70px
+  @include shadow(1)
+  background: #FFFFFF
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  padding: 0 20%
+  &_logo
+    height: 50px
+    transition: ease-in-out 0.1s
+    &:hover, &:focus
+      transform: scale(1.05)
+  &_links
+    display: flex
+    flex-direction: row
+    align-items: center
+  &_link
+    font-family: $title-font-stack
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    color: $dark-grey
+    padding: 13px
+    font-size: 1.3em
+    height: 70px
+    transition: 0.1s ease-in-out
+    &:focus, &:hover
+      transform: scale(1.05)
+      color: $brand-color
+      text-decoration: none
