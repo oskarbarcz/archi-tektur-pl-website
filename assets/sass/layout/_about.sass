@@ -15,23 +15,25 @@
     width: 49%
     position: relative
     transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
-    &:hover .about_image-overlay
+    &:hover .about_image-overlay, &:focus .about_image-overlay
       width: 100%
       height: 100%
       transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
       background: rgba(1, 1, 1, 0.7)
       visibility: visible
       @include shadow(3)
-    &:hover .about_image-help
+    &:hover .about_image-help, &:focus .about_image-help
       transition: color 0.3s ease-in-out
       color: #FFFFFF
   &_image
+    border-radius: 15px
     width: 100%
     height: auto
     object-fit: cover
     @include shadow(1)
     transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
   &_image-overlay
+    border-radius: 15px
     display: flex
     flex-direction: column
     top: 0
