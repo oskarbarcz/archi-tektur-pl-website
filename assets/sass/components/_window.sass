@@ -1,7 +1,6 @@
 .window
   border-radius: 5px
   background: #F8F9FA
-  min-height: 300px
   @include shadow(3)
   &_bar
     position: relative
@@ -38,4 +37,9 @@
     &:nth-of-type(3)
       background: #ff2800
   &_content
+    display: flex
+    align-items: center
+    height: 300px
     padding: 15px
+    &--invisible
+      display: none
