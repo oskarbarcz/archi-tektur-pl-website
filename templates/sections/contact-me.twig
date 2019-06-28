@@ -1,5 +1,63 @@
-<section class="section blog">
+<section class="section contact-me">
     <div class="section_limiter">
-        <h1 class="section_title section_title--dark">Poznajmy się lepiej</h1>
+        <h1 class="section_title section_title">Nawiążmy kontakt</h1>
+        <div class="contact-me_container">
+            <section class="contact-me_element contact-me_element--links"></section>
+            <div class="contact-me_element contact-me_element--form">
+                <section class="window">
+                    <div class="window_bar">
+                        <h2 class="window_title">Skontaktuj się ze mną</h2>
+                        <div class="window_small-icons">
+                            <span class="window_small-icon"></span>
+                            <span class="window_small-icon"></span>
+                            <span class="window_small-icon"></span>
+                        </div>
+                    </div>
+                    <article class="window_content">
+                        <form class="window_form form" action="">
+                            <div class="form_row">
+                                <div class="form_item">
+                                    <label class="form_label form_label--no-margin" for="name">Wpisz swoje imię</label>
+                                    <input class="form_input" placeholder="Imię i/lub nazwisko" id="name"
+                                           type="text" required>
+                                </div>
+                                <div class="form_item">
+                                    <label class="form_label form_label--no-margin" for="email">
+                                        Wpisz adres e-mail
+                                    </label>
+                                    <input class="form_input"
+                                           placeholder="Adres e-mail"
+                                           id="email"
+                                           type="email"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <label class="form_label form_label--no-margin" for="reason">
+                                    W czym mogę Ci pomóc?
+                                </label>
+                                <select class="form_input form_input--select" id="reason" required>
+                                    <option value="" disabled>Wybierz w czym mogę Ci pomóc</option>
+                                    <option value="webpage">Strona internetowa</option>
+                                    <option value="application">Aplikacja sieciowa</option>
+                                    <option value="programming">Inne usługi z zakresu programowania</option>
+                                    <option value="other">Coś zupełnie innego</option>
+                                </select>
+                            </div>
+                            <div class="form_item">
+                                <label class="form_label form_label--no-margin" for="content">
+                                    Opisz swoje potrzeby
+                                </label>
+                                <textarea class="form_input form_input--textarea" id="content" required
+                                          placeholder="W razie potrzeby możesz rozciągnąć to pole w prawej dolnej krawędzi."></textarea>
+                            </div>
+                            <div class="form_item form_item--to-right">
+                                <button class="form_input form_input--submit" type="submit">Wyślij</button>
+                            </div>
+                        </form>
+                    </article>
+                </section>
+            </div>
+        </div>
     </div>
 </section>
