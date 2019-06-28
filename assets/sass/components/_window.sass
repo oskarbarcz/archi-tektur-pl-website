@@ -1,0 +1,41 @@
+.window
+  border-radius: 5px
+  background: #F8F9FA
+  min-height: 300px
+  @include shadow(3)
+  &_bar
+    position: relative
+    @include shadow(1)
+    border-top-left-radius: 5px
+    border-top-right-radius: 5px
+    display: flex
+    align-items: center
+    height: 30px
+    background: #FFFFFF
+    padding: 0 10px
+    width: 100%
+  &_title
+    font-weight: bold
+    display: block
+    width: 100%
+    font-size: 0.8em
+    text-align: center
+  &_small-icons
+    display: flex
+    position: absolute
+    right: 10px
+    height: 30px
+    align-items: center
+  &_small-icon
+    height: 15px
+    width: 15px
+    border-radius: 7.5px
+    margin: 0 5px
+    &:nth-of-type(1)
+      background: orange
+    &:nth-of-type(2)
+      background: dodgerblue
+    &:nth-of-type(3)
+      background: #ff2800
+  &_content
+    padding: 15px
