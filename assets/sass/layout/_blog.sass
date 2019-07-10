@@ -1,0 +1,16 @@
+.blog
+  text-align: center
+  padding: 30px
+  &_letter
+    padding: 15px
+    display: inline-block
+    font-size: 3em
+    font-weight: bold
+    font-family: $title-font-stack
+    color: #F8F9FA
+    &:nth-of-type(even)
+      transform: skewY(15deg)
+      background-color: darken(#ff2800, 10)
+    &:nth-of-type(odd)
+      transform: skewY(-15deg)
+      background-color: lighten(#ff2800, 10)
