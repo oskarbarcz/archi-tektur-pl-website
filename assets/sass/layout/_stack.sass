@@ -1,0 +1,23 @@
+.stack
+  padding: 0 0 50px
+  &_container
+    display: flex
+    justify-content: center
+  &_list
+    min-width: 220px
+  &_element
+    transition: 0.2s all ease-in-out
+    &::before
+      content: "\2022"
+      padding: 6px
+      color: #868686
+    &:hover
+      color: $brand-color
+    &--title
+      list-style-type: none
+      margin: 0
+      font-weight: bold
+      &::before
+        content: none
+      &:hover
+        color: inherit
