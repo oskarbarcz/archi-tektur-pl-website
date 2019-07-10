@@ -5,12 +5,16 @@
     justify-content: center
   &_list
     min-width: 220px
+    background: #EEEEEE
+    padding: 5px 12px
+    margin: 5px
+    border-radius: 5px
   &_element
     transition: 0.2s all ease-in-out
     &::before
       content: "\2022"
       padding: 6px
-      color: #868686
+      color: $brand-color
     &:hover
       color: $brand-color
     &--title

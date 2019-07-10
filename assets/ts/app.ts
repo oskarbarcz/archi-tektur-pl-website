@@ -13,11 +13,11 @@ require('../sass/main.sass');
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.ts');
 
-let textarea = document.querySelector('textarea');
+document.querySelector('.form_input--textarea').addEventListener('keydown', autosize);
 
-textarea.addEventListener('keydown', (event: Event) => {
+function autosize() {
     let el = this;
     setTimeout(function () {
-        el.style.cssText = 'height:' + (el.scrollHeight + 5) + 'px';
+        el.style.cssText = 'height:' + (el.scrollHeight + 6) + 'px';
     }, 0);
-});
+}
