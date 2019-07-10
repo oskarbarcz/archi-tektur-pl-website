@@ -12,8 +12,10 @@
     "symfony/flex": "^1.1",
     "symfony/framework-bundle": "4.3.*",
     "symfony/security-csrf": "4.3.*",
+    "symfony/stopwatch": "4.3.*",
     "symfony/templating": "4.3.*",
     "symfony/twig-bundle": "4.3.*",
+    "symfony/web-profiler-bundle": "4.3.*",
     "symfony/webpack-encore-bundle": "^1.5",
     "symfony/yaml": "4.3.*",
     "twig/extensions": "^1.5"

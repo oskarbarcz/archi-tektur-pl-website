@@ -12,3 +12,12 @@ require('../sass/main.sass');
 // const $ = require('jquery');
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.ts');
+
+let textarea = document.querySelector('textarea');
+
+textarea.addEventListener('keydown', (event: Event) => {
+    let el = this;
+    setTimeout(function () {
+        el.style.cssText = 'height:' + (el.scrollHeight + 5) + 'px';
+    }, 0);
+});
