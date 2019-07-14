@@ -1,22 +1,39 @@
 .contact-me
-  padding: 50px 25% 50px
+  padding-top: 50px
+  @media (max-width: 800px)
+    padding-top: 20px
   &_container
+    width: 100%
     display: flex
     align-items: center
+    @media (max-width: 1200px)
+      flex-direction: column-reverse
   &_element
     margin: 20px
+    @media (max-width: 800px)
+      margin: 0
     &--links
       width: 30%
+      @media (max-width: 800px)
+        width: 100%
     &--form
       width: 70%
+      @media (max-width: 800px)
+        width: 100%
   &_links
     display: flex
     flex-direction: column
+    @media (max-width: 800px)
+      margin: 30px
+      justify-content: center
+      flex-direction: row
+      flex-wrap: wrap
   &_link
     display: flex
     flex-direction: row
     margin: 10px
-    width: 250px
+    //width: 250px
+    width: auto
     transition: 0.1s ease-in-out all
     &:hover
       @include shadow(2)
@@ -42,4 +59,4 @@
     align-items: center
     color: #F8F9FA
     font-size: 1.3em
-    padding: 0 20px
+    margin-left: 20px

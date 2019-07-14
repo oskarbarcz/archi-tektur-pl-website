@@ -3,8 +3,14 @@
   padding: 150px 0 50px
   background-size: 1440px 126px
   background: #292929 url("/media/layout/landing-bottom.svg") repeat-x center top
+  @media (max-width: 1200px)
+    padding: 100px 0 50px
+  @media (max-width: 800px)
+    padding: 50px 0
   &_container
     display: flex
     flex-direction: row
     justify-content: center
     align-items: center
+    @media (max-width: 1200px)
+      flex-direction: column

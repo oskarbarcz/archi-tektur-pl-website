@@ -1,16 +1,26 @@
 .stack
-  padding: 0 0 50px
+  padding: 0 200px 50px
+  @media (max-width: 1200px)
+    padding: 0
   &_container
     display: flex
     justify-content: center
+    flex-wrap: wrap
   &_list
-    min-width: 220px
+    min-width: 200px
     background: #EEEEEE
-    padding: 5px 12px
+    padding: 8px 12px
     margin: 5px
+    @media (max-width: 550px)
+      width: 45%
+      min-width: auto
+    @media (max-width: 400px)
+      width: 100%
     border-radius: 5px
   &_element
     transition: 0.2s all ease-in-out
+    @media (max-width: 550px)
+      font-size: 0.8em
     &::before
       content: "\2022"
       padding: 6px
