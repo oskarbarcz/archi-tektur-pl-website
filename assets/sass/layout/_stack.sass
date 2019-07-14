@@ -6,6 +6,7 @@
     display: flex
     justify-content: center
     flex-wrap: wrap
+    margin-bottom: 30px
   &_list
     min-width: 200px
     background: #EEEEEE
@@ -17,6 +18,8 @@
     @media (max-width: 400px)
       width: 100%
     border-radius: 5px
+    border-bottom: 4px #ff2800 solid
+    @include shadow(1)
   &_element
     transition: 0.2s all ease-in-out
     @media (max-width: 550px)

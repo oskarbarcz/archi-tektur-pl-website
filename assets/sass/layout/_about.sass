@@ -2,7 +2,7 @@
   font-family: 'Didact Gothic', sans-serif
   padding: 150px auto 100px
   @media (max-width: 800px)
-    padding: 20px 0
+    padding: 10px 0
   &_container
     display: flex
     flex-direction: row
@@ -12,7 +12,7 @@
       margin: 70px auto
     @media screen and (max-width: 800px)
       flex-direction: column-reverse
-      margin: 30px auto
+      margin: 20px auto
   &_element
     display: flex
     flex-direction: column
@@ -21,6 +21,7 @@
     margin: 30px
     @media screen and (max-width: 900px)
       width: 100%
+      margin: 15px auto
   &_name
     font-size: 2.5em
   &_title
@@ -29,6 +30,8 @@
     text-transform: uppercase
     color: $brand-color
     font-family: $title-font-stack
+    @media (max-width: 800px)
+      margin: 0 10px
   &_text
     margin: 5px
     font-size: 18px

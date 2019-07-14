@@ -1,5 +1,4 @@
 .projects
-  height: auto
   padding: 150px 0 50px
   background-size: 1440px 126px
   background: #292929 url("/media/layout/landing-bottom.svg") repeat-x center top
@@ -8,9 +7,13 @@
   @media (max-width: 800px)
     padding: 50px 0
   &_container
+    height: 900px
     display: flex
-    flex-direction: row
-    justify-content: center
+    flex-direction: column
+    flex-wrap: wrap
     align-items: center
+    align-content: center
+    justify-items: center
+    justify-content: center
     @media (max-width: 1200px)
       flex-direction: column

@@ -3,9 +3,10 @@
   @media (max-width: 800px)
     padding-top: 20px
   &_container
-    width: 100%
     display: flex
     align-items: center
+    justify-content: center
+    margin: 0 auto
     @media (max-width: 1200px)
       flex-direction: column-reverse
   &_element
@@ -13,11 +14,11 @@
     @media (max-width: 800px)
       margin: 0
     &--links
-      width: 30%
+      width: auto
       @media (max-width: 800px)
         width: 100%
     &--form
-      width: 70%
+      width: auto
       @media (max-width: 800px)
         width: 100%
   &_links
@@ -32,8 +33,7 @@
     display: flex
     flex-direction: row
     margin: 10px
-    //width: 250px
-    width: auto
+    width: 250px
     transition: 0.1s ease-in-out all
     &:hover
       @include shadow(2)
