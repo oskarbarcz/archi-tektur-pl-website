@@ -1,3 +1,5 @@
+$navBreakPoint: 800px
+
 .navigation
   position: sticky
   top: 0
@@ -10,16 +12,19 @@
   align-items: center
   z-index: 10000
   padding: 0 20%
-  @media screen and (max-width: 1200px)
-    justify-content: center
+  @media (max-width: 1200px)
+    padding: 0 5%
+  @media (max-width: $navBreakPoint)
     flex-direction: column
     padding: 0
   &_mobile-belt
+    width: 90%
+    margin: 0 auto
     display: flex
     justify-content: space-between
     align-items: center
-    @media screen and (max-width: 1200px)
-      display: revert
+    @media (max-width: $navBreakPoint)
+      display: flex
   &_hamburger
     display: inline-block
     color: $dark-grey
@@ -27,7 +32,7 @@
     padding: 5px
     font-size: 1.2em
     visibility: hidden
-    @media screen and (max-width: 1200px)
+    @media (max-width: $navBreakPoint)
       visibility: visible
   &_logo
     height: 50px
@@ -36,17 +41,22 @@
     &:hover, &:focus
       transform: scale(1.05)
   &_links
+    width: 100%
     display: flex
     background: #FFFFFF
     flex-direction: row
+    justify-content: flex-end
     align-items: center
-    @media screen and (max-width: 1200px)
+    @media (max-width: $navBreakPoint)
+      justify-content: center
       display: none
       flex-direction: row
-    @media screen and (max-width: 500px)
+    @media (max-width: 500px)
       flex-direction: column
     &--opened
       display: flex
+    &--opened .navigation
+      @include shadow(3)
   &_link
     font-family: $title-font-stack
     text-transform: uppercase
@@ -57,10 +67,12 @@
     font-size: 1.3em
     height: 70px
     transition: 0.1s ease-in-out
-    @media screen and (max-width: 1200px)
-      padding: 2px
+    @media (max-width: $navBreakPoint)
+      padding: 4px 20px
       height: auto
     &:focus, &:hover
       transform: scale(1.05)
       color: $brand-color
       text-decoration: none
+    &--outside
+      color: $brand-color

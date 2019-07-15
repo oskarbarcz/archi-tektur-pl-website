@@ -21,3 +21,19 @@ function autosize() {
         el.style.cssText = 'height:' + (el.scrollHeight + 6) + 'px';
     }, 0);
 }
+
+// define menu objects
+let hamburger: HTMLElement = document.querySelector('.navigation_hamburger');
+let navigationLinks: HTMLElement = document.querySelector('.navigation_links');
+let cssClass = 'navigation_links--opened';
+
+window.addEventListener('click', (event) => {
+    // if opened and target is NOT menu
+    if (event.target == hamburger) {
+        navigationLinks.classList.toggle(cssClass);
+    }
+
+    if (navigationLinks.classList.contains(cssClass) && event.target !== navigationLinks) {
+        navigationLinks.classList.remove(cssClass);
+    }
+});
