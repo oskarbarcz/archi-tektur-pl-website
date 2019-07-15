@@ -16,17 +16,22 @@ class FormHandler {
         // listen for form submit
         this._formElements.submit.addEventListener('click', (event) => {
             event.preventDefault();
-            this._captureSubmit();
+            this._submitForm();
         });
 
         // listen for going back to form
-        document.getElementById('button-backToForm').addEventListener('click', (event) => {
+        this._formElements.backButton.addEventListener('click', (event) => {
             event.preventDefault();
             this._switchScreens();
+            this._resetForm()
         });
     }
 
-    private _captureSubmit() {
+    /**
+     * Handles form submitting
+     * @private
+     */
+    private _submitForm() {
         const data = new FormData();
         data.name = this._formElements.name.value;
         data.email = this._formElements.email.value;
@@ -44,9 +49,24 @@ class FormHandler {
 
     }
 
+    /**
+     * Switches between screens
+     * @private
+     */
     private _switchScreens() {
         this._formElements.formScreen.classList.toggle('window_content--invisible');
         this._formElements.confirmScreen.classList.toggle('window_content--invisible');
+    }
+
+    /**
+     * Resets form inputs
+     * @private
+     */
+    private _resetForm() {
+        this._formElements.name.value = '';
+        this._formElements.email.value = '';
+        this._formElements.reason.value = 'webpage';
+        this._formElements.content.value = '';
     }
 
 }

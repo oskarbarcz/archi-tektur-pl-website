@@ -19,7 +19,8 @@ new FormHandler({
     content: document.querySelector('#field-content'),
     submit: document.querySelector('#button-submit'),
     formScreen: document.querySelector('#window-form'),
-    confirmScreen: document.querySelector('#window-confirmation')
+    confirmScreen: document.querySelector('#window-confirmation'),
+    backButton: document.querySelector('#button-backToForm')
 });
 
 // handles navigation behavior
