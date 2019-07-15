@@ -32,27 +32,28 @@
                             <span class="window_small-icon"></span>
                         </div>
                     </div>
-                    <article class="window_content" id="windowContent">
+                    <article class="window_content" id="window-form">
                         <form class="window_form form" action="">
                             <div class="form_row">
                                 <div class="form_item">
-                                    <label class="form_label form_label--no-margin" for="name">Wpisz swoje imię</label>
-                                    <input class="form_input" placeholder="imię i/lub nazwisko" id="name"
+                                    <label class="form_label form_label--no-margin" for="field-name">Wpisz swoje
+                                        imię</label>
+                                    <input class="form_input" placeholder="imię i/lub nazwisko" id="field-name"
                                            type="text" required>
                                 </div>
                                 <div class="form_item">
-                                    <label class="form_label form_label--no-margin" for="email">
+                                    <label class="form_label form_label--no-margin" for="field-email">
                                         Wpisz adres e-mail
                                     </label>
-                                    <input class="form_input" placeholder="adres e-mail" id="email" type="email"
+                                    <input class="form_input" placeholder="adres e-mail" id="field-email" type="email"
                                            required>
                                 </div>
                             </div>
                             <div class="form_item">
-                                <label class="form_label form_label--no-margin" for="reason">
+                                <label class="form_label form_label--no-margin" for="field-reason">
                                     W czym mogę Ci pomóc?
                                 </label>
-                                <select class="form_input form_input--select" id="reason" required>
+                                <select class="form_input form_input--select" id="field-reason" required>
                                     <option value="" disabled>Wybierz w czym mogę Ci pomóc</option>
                                     <option value="webpage">Strona internetowa</option>
                                     <option value="application">Aplikacja sieciowa</option>
@@ -61,21 +62,25 @@
                                 </select>
                             </div>
                             <div class="form_item">
-                                <label class="form_label form_label--no-margin" for="content">
+                                <label class="form_label form_label--no-margin" for="field-content">
                                     Opisz swoje potrzeby
                                 </label>
                                 <textarea class="form_input form_input--textarea"
-                                          id="content" required
+                                          id="field-content" required
                                           maxlength="2000"
                                           placeholder="W razie potrzeby możesz rozciągnąć to pole w prawej dolnej krawędzi."
                                 ></textarea>
                             </div>
                             <div class="form_item form_item--to-right">
-                                <button class="form_input form_input--submit" type="submit">Wyślij</button>
+                                <button class="form_input form_input--submit"
+                                        id="button-submit"
+                                        type="submit">
+                                    Wyślij
+                                </button>
                             </div>
                         </form>
                     </article>
-                    <article class="window_content window_content--invisible" content="windowContent">
+                    <article class="window_content window_content--invisible" id="window-confirmation">
                         <div class="thanks-form">
                             <h2 class="thanks-form_title">Dzięki za wysłanie wiadomości!</h2>
                             <p class="thanks-form_content">Postaram się odpowiedzieć jak najszybciej. Kopię Twojej
@@ -83,7 +88,7 @@
                                 Na wszystkie wiadomości staram się odpowiadać do 24 godzin, chociaż zazwyczaj jest to
                                 kwestia kilkudziesięciu minut. Może w międzyczasie zajrzysz na mojego
                                 <a class="thanks-form_blog" href="">bloga</a>?</p>
-                            <a class="thanks-form_button" href="">Wróć do formularza</a>
+                            <a class="thanks-form_button" id="button-backToForm" href="">Wróć do formularza</a>
                         </div>
                     </article>
                 </section>
