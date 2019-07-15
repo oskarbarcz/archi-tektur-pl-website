@@ -1,7 +1,10 @@
 .projects
   padding: 150px 0 50px
-  background-size: 1440px 126px
+  background-size: calc(100vw + 2px) 228px
   background: #292929 url("/media/layout/landing-bottom.svg") repeat-x center top
+  object-fit: cover
+  @media (max-width: 870px)
+    padding: 50px 0 0
   @media (max-width: 1200px)
     padding: 100px 0 50px
   @media (max-width: 800px)
@@ -15,5 +18,11 @@
     align-content: center
     justify-items: center
     justify-content: center
-    @media (max-width: 1200px)
-      flex-direction: column
+    @media (max-width: 1280px)
+      height: 1445px
+    @media (max-width: 870px)
+      height: 2500px
+    @media (max-width: 425px)
+      height: auto
+
+

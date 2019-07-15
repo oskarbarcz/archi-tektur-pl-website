@@ -1,6 +1,12 @@
 .stack
   padding: 0 200px 50px
+  @media (max-width: 1460px)
+    padding: 0
   @media (max-width: 1200px)
+    padding: 0 200px
+  @media (max-width: 1100px)
+    padding: 0 100px
+  @media (max-width: 1100px)
     padding: 0
   &_container
     display: flex
@@ -16,7 +22,8 @@
       width: 45%
       min-width: auto
     @media (max-width: 400px)
-      width: 100%
+      width: 95%
+      margin: 5px auto
     border-radius: 5px
     border-bottom: 4px #ff2800 solid
     @include shadow(1)
@@ -24,6 +31,8 @@
     transition: 0.2s all ease-in-out
     @media (max-width: 550px)
       font-size: 0.8em
+    @media (max-width: 425px)
+      font-size: 0.9em
     &::before
       content: "\2022"
       padding: 6px
