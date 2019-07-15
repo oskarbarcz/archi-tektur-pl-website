@@ -26,64 +26,60 @@ class Navigation implements Openable {
     }
 
     /**
-     * Changes hamburger to close and back
-     * @param event
-     * @param toClose
+     * Forces menu to openMenu
      */
-    private static changeIcon(event, toClose) {
-        let iconClose = 'fa-times';
-        let iconOpen = 'fa-bars';
-        toClose ? event.target.classList.replace(iconClose, iconOpen) : event.target.classList.replace(iconOpen, iconClose);
-    };
-
-    /**
-     * Forces menu to open
-     */
-    public open() {
+    public openMenu(): void {
         if (!this.isOpened()) {
+            this.changeIcon();
+            window.addEventListener('click', (event) => {
+                if (event.target != this._links && event.target != this._button) {
+                    this.closeMenu();
+                }
+            });
             return this._links.classList.add(this.openedClassName);
         }
     }
 
     /**
-     * Forces menu to close
+     * Forces menu to closeMenu
      */
-    public close() {
+    public closeMenu(): void {
         if (this.isOpened()) {
-            return this._links.classList.remove(this.openedClassName);
+            this.changeIcon();
+            window.removeEventListener('click', (event) => {
+                if (event.target != this._links && event.target != this._button) {
+                    this.closeMenu();
+                }
+            });
+            this._links.classList.remove(this.openedClassName);
         }
     }
+
+    /**
+     * Initializes navigation's work
+     */
+    private init(): void {
+        this._button.addEventListener('click', () => {
+            this.isOpened() ? this.closeMenu() : this.openMenu();
+        });
+    }
+
+    /**
+     * Changes hamburger to closeMenu and back
+     */
+    private changeIcon(): void {
+        let iconClose = 'fa-times';
+        let iconOpen = 'fa-bars';
+        (this._button.classList.contains(iconClose))
+            ? this._button.classList.replace(iconClose, iconOpen)
+            : this._button.classList.replace(iconOpen, iconClose);
+    };
 
     /**
      * Checks if menu is opened
      */
     public isOpened(): boolean {
         return this._links.classList.contains(this.openedClassName);
-    }
-
-    /**
-     * Initializes navigation's work
-     */
-    private init() {
-        let observe = (event) => {
-            if (event.target != this._links && event.target != this._button) {
-                this.close();
-            }
-        };
-
-        this._button.addEventListener('click', (event) => {
-            if (!this.isOpened()) {
-                // if closed
-                this.open();
-                Navigation.changeIcon(event, false);
-                window.addEventListener('click', observe)
-            } else {
-                // if opened
-                window.removeEventListener('click', observe);
-                Navigation.changeIcon(event, true);
-                this.close();
-            }
-        });
     }
 }
 

@@ -1,7 +1,7 @@
 interface Openable {
-    open(): void;
+    openMenu(): void;
 
-    close(): void;
+    closeMenu(): void;
 
     isOpened(): boolean;
 }
