@@ -1,4 +1,4 @@
-$navBreakPoint: 800px
+$navBreakPoint: 985px
 
 .navigation
   position: sticky
@@ -26,12 +26,18 @@ $navBreakPoint: 800px
     @media (max-width: $navBreakPoint)
       display: flex
   &_hamburger
+    background-color: inherit
+    border: none
+    outline: none
     display: inline-block
     color: $dark-grey
     margin: 0 20px
     padding: 5px
     font-size: 1.2em
     visibility: hidden
+    transition: 0.1s all ease-in-out
+    &:hover, &:focus
+      color: $brand-color
     @media (max-width: $navBreakPoint)
       visibility: visible
   &_logo
@@ -76,3 +82,12 @@ $navBreakPoint: 800px
       text-decoration: none
     &--outside
       color: $brand-color
+    &--soon
+      font-size: 0.5em
+      background-color: #ff2800
+      color: #F8F9FA
+      border-radius: 3px
+      margin: 0 10px
+      font-weight: bold
+      padding: 3px 6px
+

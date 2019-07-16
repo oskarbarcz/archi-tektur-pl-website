@@ -1,12 +1,17 @@
 <nav class="navigation">
     <div class="navigation_mobile-belt">
         <img class="navigation_logo" src="{{asset('media/logo/horizontal-color.svg')}}" alt="">
-        <span class="fas fa-bars fa-fw navigation_hamburger" role="button"></span>
+        <button class="fas fa-bars fa-fw navigation_hamburger" tabindex="0"></button>
     </div>
     <ul class="navigation_links">
         <li><a class="navigation_link" href="#about-me">O mnie</a></li>
         <li><a class="navigation_link" href="#projects">Projekty</a></li>
         <li><a class="navigation_link" href="#contact">Kontakt</a></li>
-        <li><a class="navigation_link navigation_link--outside" href="">Blog</a></li>
+        <li>
+            <a class="navigation_link navigation_link--outside" href="">
+                Blog
+                <span class="navigation_link--soon">Już wkrótce</span>
+            </a>
+        </li>
     </ul>
 </nav>

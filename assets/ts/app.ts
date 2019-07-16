@@ -1,5 +1,6 @@
 import {Navigation} from "./portfolio/Navigation/Navigation";
 import {FormHandler} from "./portfolio/Form/FormHandler";
+import {SmoothScroll} from "./portfolio/Navigation/SmoothScroll";
 
 require('../sass/main.sass');
 
@@ -21,3 +22,5 @@ new Navigation(
     document.querySelector('.navigation_hamburger'),
     document.querySelector('.navigation_links')
 );
+
+new SmoothScroll(true);
