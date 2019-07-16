@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -24,5 +25,16 @@ class PortfolioController extends AbstractController
     public function portfolio(): Response
     {
         return $this->render('portfolio.html.twig');
+    }
+
+    /**
+     * @Route({
+     *     "pl": "/blog",
+     *     "en": "/blog"
+     * }, name="blog")
+     */
+    public function furtherBlogLink(): NotFoundHttpException
+    {
+        $this->createNotFoundException();
     }
 }
