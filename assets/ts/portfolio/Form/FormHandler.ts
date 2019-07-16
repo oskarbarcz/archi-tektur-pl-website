@@ -13,6 +13,9 @@ class FormHandler {
     }
 
     private _init() {
+        // listen for writing in textarea
+        this._formElements.content.addEventListener('keydown', this.autoEnlargeTextarea);
+
         // listen for form submit
         this._formElements.submit.addEventListener('click', (event) => {
             event.preventDefault();
@@ -25,6 +28,19 @@ class FormHandler {
             this._switchScreens();
             this._resetForm()
         });
+    }
+
+    /**
+     * Enlarges textarea while writing
+     * @param event
+     */
+    private autoEnlargeTextarea(event: Event) {
+        if (event.target instanceof HTMLElement) {
+            let el = event.target;
+            setTimeout(function () {
+                el.style.cssText = 'height:' + (el.scrollHeight + 5.1) + 'px';
+            }, 0);
+        }
     }
 
     /**

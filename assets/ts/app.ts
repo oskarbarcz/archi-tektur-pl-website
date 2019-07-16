@@ -3,14 +3,7 @@ import {FormHandler} from "./portfolio/Form/FormHandler";
 
 require('../sass/main.sass');
 
-document.querySelector('.form_input--textarea').addEventListener('keydown', autosize);
-
-function autosize() {
-    let el = this;
-    setTimeout(function () {
-        el.style.cssText = 'height:' + (el.scrollHeight + 6) + 'px';
-    }, 0);
-}
+// document.querySelector('.form_input--textarea').addEventListener('keydown', autosize);
 
 new FormHandler({
     name: document.querySelector('#field-name'),
