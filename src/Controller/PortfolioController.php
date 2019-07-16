@@ -7,18 +7,21 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * DefaultController
+ * PortfolioController
  *
  * @package Controller
  */
-class DefaultController extends AbstractController
+class PortfolioController extends AbstractController
 {
     /**
      * Prints main HTML portfolio page
      *
-     * @Route("/", name="main")
+     * @Route({
+     *     "pl": "/",
+     *     "en": "/en"
+     * }, name="main")
      */
-    public function index(): Response
+    public function portfolio(): Response
     {
         return $this->render('portfolio.html.twig');
     }
