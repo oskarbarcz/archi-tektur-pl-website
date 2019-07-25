@@ -13,18 +13,19 @@ $navBreakPoint: 985px
   z-index: 10000
   padding: 0 20%
   @media (max-width: 1200px)
-    padding: 0 5%
+    padding: 0 10%
   @media (max-width: $navBreakPoint)
     flex-direction: column
     padding: 0
   &_mobile-belt
-    width: 90%
+    width: 230px
     margin: 0 auto
     display: flex
     justify-content: space-between
     align-items: center
     @media (max-width: $navBreakPoint)
-      display: flex
+      justify-content: space-between
+      width: 100%
   &_hamburger
     background-color: inherit
     border: none
@@ -44,6 +45,8 @@ $navBreakPoint: 985px
     height: 50px
     margin: 5px 0
     transition: ease-in-out 0.1s
+    @media (max-width: $navBreakPoint)
+      margin-left: 20px
     &:hover, &:focus
       transform: scale(1.05)
   &_links
@@ -56,7 +59,7 @@ $navBreakPoint: 985px
     @media (max-width: $navBreakPoint)
       justify-content: center
       display: none
-      flex-direction: row
+      flex-flow: row nowrap
     @media (max-width: 500px)
       flex-direction: column
     &--opened
