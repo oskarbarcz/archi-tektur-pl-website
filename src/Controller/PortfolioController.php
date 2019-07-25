@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PortfolioController extends AbstractController
 {
     /**
-     * Prints main HTML portfolio page
+     * Prints main HTML Portfolio page
      *
      * @Route({
      *     "pl": "/",
