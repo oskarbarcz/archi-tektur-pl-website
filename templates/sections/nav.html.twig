@@ -1,6 +1,7 @@
 <nav class="navigation">
     <div class="navigation_mobile-belt">
-        <img class="navigation_logo" src="{{asset('media/logo/horizontal-color.svg')}}" alt="">
+        <h1 class="visually-hidden">archi_tektur - freelancer dla Ciebie</h1>
+        <img class="navigation_logo" src="{{ asset('media/logo/horizontal-color.svg') }}" alt="">
         <button class="fas fa-bars fa-fw navigation_hamburger" tabindex="0"></button>
     </div>
     <ul class="navigation_links">
@@ -8,7 +9,7 @@
         <li><a class="navigation_link" href="#projects">Projekty</a></li>
         <li><a class="navigation_link" href="#contact">Kontakt</a></li>
         <li>
-            <a class="navigation_link navigation_link--outside" href="{{path('blog')}}">
+            <a class="navigation_link navigation_link--outside" href="{{ path('blog') }}">
                 Blog
                 <span class="navigation_link--soon">Już wkrótce</span>
             </a>
