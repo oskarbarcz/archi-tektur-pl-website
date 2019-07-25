@@ -14,6 +14,11 @@ Encore
     corejs: 3,
   })
   .enableSassLoader()
+  .enablePostCssLoader((options) => {
+    options.config = {
+      path: 'pos',
+    };
+  })
   .enableTypeScriptLoader()
   .enableIntegrityHashes();
 
