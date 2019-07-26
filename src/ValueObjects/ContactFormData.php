@@ -3,6 +3,7 @@
 namespace App\ValueObjects;
 
 use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Represents form data
@@ -12,24 +13,31 @@ use JMS\Serializer\Annotation as Serializer;
 class ContactFormData
 {
     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min="3", max="64")
      * @Serializer\Type("string")
      * @var string
      */
     private $name;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Email()
      * @Serializer\Type("string")
      * @var string
      */
     private $email;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Choice({"webpage", "application", "programming", "other"})
      * @Serializer\Type("string")
      * @var string
      */
     private $reason;
 
     /**
+     * @Assert\Length(min="10", max="10000")
      * @Serializer\Type("string")
      * @var string
      */
