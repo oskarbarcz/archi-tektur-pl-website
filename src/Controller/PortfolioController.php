@@ -20,7 +20,7 @@ class PortfolioController extends AbstractController
      * @Route({
      *     "pl": "/",
      *     "en": "/en"
-     * }, name="main")
+     * }, name="portfolio_index")
      */
     public function portfolio(): Response
     {
