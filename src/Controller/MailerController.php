@@ -47,6 +47,6 @@ class MailerController extends AbstractFOSRestController
 
         // do sth
 
-        return new View($data);
+        return new View($object);
     }
 }
