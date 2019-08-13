@@ -1,0 +1,4 @@
+services:
+  App\Portfolio\Controllers\:
+    resource: '../../Controllers'
+    tags: ['controller.service_arguments']
