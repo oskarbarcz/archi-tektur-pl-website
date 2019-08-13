@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class PortfolioControllerTest extends WebTestCase
 {
-    public function testPageResponseCode(): void
+    public function testIfPageLoadsOnGetMethodWithCorrectStatusCode(): void
     {
         $client = static::createClient();
         $client->request('GET', '/');
