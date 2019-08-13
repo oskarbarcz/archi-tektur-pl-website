@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -21,6 +22,7 @@ class PortfolioController extends AbstractController
      *     "pl": "/",
      *     "en": "/en"
      * }, name="portfolio_index")
+     * @Template()
      */
     public function portfolio(): Response
     {
