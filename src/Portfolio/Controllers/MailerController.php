@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Portfolio\Controllers;
 
-use App\ValueObjects\ContactFormData;
+use App\Portfolio\ValueObjects\ContactFormData;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\View\View;
@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Controls endpoints for mailing purposes
  *
- * @package App\Controller
+ * @package App\Controllers
  */
 class MailerController extends AbstractFOSRestController
 {

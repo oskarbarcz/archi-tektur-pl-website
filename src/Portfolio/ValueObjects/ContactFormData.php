@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\ValueObjects;
+namespace App\Portfolio\ValueObjects;
 
 use JMS\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
