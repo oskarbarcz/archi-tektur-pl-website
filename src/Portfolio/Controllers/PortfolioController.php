@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Portfolio\Controllers;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * PortfolioController
  *
- * @package Controller
+ * @package Controllers
  */
 class PortfolioController extends AbstractController
 {
@@ -24,7 +24,7 @@ class PortfolioController extends AbstractController
      */
     public function portfolio(): Response
     {
-        return $this->render('portfolio.html.twig');
+        return $this->render('@Portfolio/portfolio.html.twig');
     }
 
     /**
