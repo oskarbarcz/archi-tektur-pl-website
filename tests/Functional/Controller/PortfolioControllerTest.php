@@ -1,14 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace App\Tests\Controller;
+namespace App\Tests\Functional\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * PortfolioControllerTest
- *
- * @package App\Tests\Controllers
  */
 class PortfolioControllerTest extends WebTestCase
 {
