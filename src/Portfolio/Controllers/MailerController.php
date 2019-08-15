@@ -2,13 +2,12 @@
 
 namespace App\Portfolio\Controllers;
 
+use App\Portfolio\Services\MailerFacade;
 use App\Portfolio\ValueObjects\ContactFormData;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\View\View;
 use JMS\Serializer\SerializerInterface;
-use Swift_Mailer;
-use Swift_Message;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -23,10 +22,10 @@ class MailerController extends AbstractFOSRestController
      * @Rest\Post("/api/catch-form", name="api_mailer")
      * @param Request             $request
      * @param SerializerInterface $serializer
-     * @param Swift_Mailer        $mailer
+     * @param MailerFacade        $mailer
      * @return View
      */
-    public function catchFormSubmission(Request $request, SerializerInterface $serializer, Swift_Mailer $mailer): View
+    public function catchFormSubmission(Request $request, SerializerInterface $serializer, MailerFacade $mailer): View
     {
         $data = $request->request->all();
         $object = $serializer->deserialize(
@@ -35,17 +34,13 @@ class MailerController extends AbstractFOSRestController
             'json'
         );
 
-        $message = (new Swift_Message('Hello Email'))
-            ->setFrom('dev@archi-tektur.pl')
-            ->setTo('kontakt@archi-tektur.pl')
-            ->setBody(
-                'TEST KURDE',
-                'text/plain'
-            );
-
-        $mailer->send($message);
-
-        // do sth
+        $mailer->sendMessage(
+            'TEST WIADOMOŚCI',
+            'dev@archi-tektur.pl',
+            ['kontkakt@archi-tektut.pl'],
+            'treść wiadomości',
+            'text/plain'
+        );
 
         return new View($object);
     }
