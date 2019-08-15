@@ -58,17 +58,15 @@ class MailerController extends AbstractFOSRestController
             return View::create(['error' => true, 'errors' => $errors,], 400);
         }
 
-
-        /*
-            $this->>mailer->sendMessage(
+        // send e-mail
+        $this->mailer->sendMessage(
             'TEST WIADOMOŚCI',
             'dev@archi-tektur.pl',
             ['kontkakt@archi-tektut.pl'],
             'treść wiadomości',
             'text/plain'
         );
-        */
 
-        return View::create('ok', 200);
+        return View::create(['formData' => $contactDataFromForm,], 200);
     }
 }

@@ -13,6 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class ContactFormData
 {
     /**
+     * @Assert\NotNull()
      * @Assert\NotBlank()
      * @Assert\Length(min="3", max="64")
      * @Serializer\Type("string")
@@ -21,6 +22,7 @@ class ContactFormData
     private $name;
 
     /**
+     * @Assert\NotNull()
      * @Assert\NotBlank()
      * @Assert\Email()
      * @Serializer\Type("string")
@@ -29,6 +31,7 @@ class ContactFormData
     private $email;
 
     /**
+     * @Assert\NotNull()
      * @Assert\NotBlank()
      * @Assert\Choice({"webpage", "application", "programming", "other"})
      * @Serializer\Type("string")
@@ -37,15 +40,14 @@ class ContactFormData
     private $reason;
 
     /**
+     * @Assert\NotNull()
      * @Assert\Length(min="10", max="10000")
      * @Serializer\Type("string")
      * @var string
      */
     private $content;
 
-    /**
-     * @return string
-     */
+    /** @return string */
     public function getName(): string
     {
         return $this->name;

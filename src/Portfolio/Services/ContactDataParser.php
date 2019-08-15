@@ -8,9 +8,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class ContactDataParser
 {
-    /**
-     * @var ValidatorInterface
-     */
+    /** @var ValidatorInterface */
     protected $validator;
 
     public function __construct(ValidatorInterface $validator)
