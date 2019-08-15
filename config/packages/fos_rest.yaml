@@ -6,6 +6,7 @@ fos_rest:
   view:
     view_response_listener:  true
   exception:
+    exception_controller: 'fos_rest.exception.controller:showAction'
     enabled: true
     messages:
       LogicException: false

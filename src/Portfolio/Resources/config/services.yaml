@@ -1,4 +1,4 @@
 services:
-  App\Portfolio\Controllers\:
-    resource: '../../Controllers'
+  App\Portfolio\Controller\:
+    resource: '../../Controller'
     tags: ['controller.service_arguments']

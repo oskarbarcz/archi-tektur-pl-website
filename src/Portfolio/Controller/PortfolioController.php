@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Portfolio\Controllers;
+namespace App\Portfolio\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * PortfolioController
  *
- * @package Controllers
+ * @package Controller
  */
 class PortfolioController extends AbstractController
 {

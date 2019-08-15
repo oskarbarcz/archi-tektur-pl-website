@@ -25,7 +25,6 @@ class ContactDataParser
      */
     public function validate(ContactFormData $contactFormData): bool
     {
-        $this->validator->validate($contactFormData);
         return true;
     }
 }
