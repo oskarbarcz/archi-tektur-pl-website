@@ -13,7 +13,8 @@ class SmoothScroll {
     private _applySmoothScroll(anchor) {
         anchor.addEventListener('click', function (e) {
             document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+                behavior: 'smooth',
+                block: 'center'
             });
             e.preventDefault();
         });

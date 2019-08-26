@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Portfolio\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,11 +20,11 @@ class PortfolioController extends AbstractController
      * @Route({
      *     "pl": "/",
      *     "en": "/en"
-     * }, name="main")
+     * }, name="portfolio_index")
      */
     public function portfolio(): Response
     {
-        return $this->render('portfolio.html.twig');
+        return $this->render('@Portfolio/portfolio.html.twig');
     }
 
     /**
