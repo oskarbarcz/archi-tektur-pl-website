@@ -9,6 +9,7 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\View\View;
 use JMS\Serializer\SerializerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
@@ -42,11 +43,10 @@ class FormSubmitController extends AbstractFOSRestController
      */
     public function catchFormSubmission(Request $request): View
     {
-        $data = $request->request->all();
-
         // change raw form into ContactFormData
+        /** @var ContactFormData $contactDataFromForm */
         $contactDataFromForm = $this->serializer->deserialize(
-            json_encode($data),
+            $request->getContent(),
             ContactFormData::class,
             'json'
         );
@@ -55,18 +55,26 @@ class FormSubmitController extends AbstractFOSRestController
 
         // return error on non-valid data
         if (count($errors) > 0) {
-            return View::create(['error' => true, 'errors' => $errors], 400);
+            return View::create(['error' => true, 'errors' => $errors], Response::HTTP_BAD_REQUEST);
         }
 
         // send e-mail
         $this->mailer->sendMessage(
             'TEST WIADOMOŚCI',
             'dev@archi-tektur.pl',
-            ['kontkakt@archi-tektut.pl'],
-            'treść wiadomości',
+            [
+                'kontakt@archi-tektut.pl',
+                $contactDataFromForm->getEmail(),
+            ],
+            sprintf(
+                'Wysłałeś do mnie wiadomość o treści: %s. Twoje dane podane w formularzu: %s, %s. Odpiszę jak najszybciej będę mógł.',
+                $contactDataFromForm->getContent(),
+                $contactDataFromForm->getName(),
+                $contactDataFromForm->getEmail()
+            ),
             'text/plain'
         );
 
-        return View::create(['formData' => $contactDataFromForm,], 200);
+        return View::create(['formData' => $contactDataFromForm], Response::HTTP_OK);
     }
 }

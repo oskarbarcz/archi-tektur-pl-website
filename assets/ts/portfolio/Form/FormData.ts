@@ -7,7 +7,7 @@ export class FormData {
     public reason: string;
     public content: string;
 
-    public validate(): boolean {
+    public static validate(): boolean {
         return true;
     }
 }
