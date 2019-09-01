@@ -55,7 +55,7 @@ class FormHandler {
         data.content = this._formElements.content.value;
 
         // if data are valid, send
-        if (!data.validate()) {
+        if (!FormData.validate()) {
             // handle errors
         }
         let result = this._sender.send(data);
