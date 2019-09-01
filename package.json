@@ -21,5 +21,8 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "dependencies": {
+    "dotenv": "^8.1.0"
+  }
 }

@@ -2,7 +2,7 @@ import {FormData} from "./FormData";
 
 class FormDataSender {
 
-    urlPath: string = 'http://localhost:8000/api/catch-form';
+    urlPath: string = '/api/catch-form';
 
     public send(formData: FormData) {
 
@@ -16,7 +16,9 @@ class FormDataSender {
                 return data;
             })
             .then(res => {
-                console.log('Prawidłowo wysłano wiadomość e-mail!');
+                if (res.status == 200) {
+                    console.log('Prawidłowo wysłano wiadomość e-mail!');
+                }
             })
             .catch(err => {
             });
