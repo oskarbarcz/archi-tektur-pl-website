@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="blog">
+        <h1 class="blog_title">Blog</h1>
+        <span class="blog_text">Już wkrótce powstanie tutaj blog, stay tuned!</span>
+        <a class="blog_back-button" href="{{ path('portfolio_index') }}">
+            <span class="fas fa-arrow-left fa-fw"></span>
+            Wróć do portfolio
+        </a>
+    </div>
+{% endblock %}
