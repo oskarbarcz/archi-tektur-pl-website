@@ -10,8 +10,10 @@
   &_item
     width: 100%
     padding: 5px
-    &--to-right
-      text-align: right
+    &--to-sides
+      display: flex
+      justify-content: space-between
+      align-items: center
   &_label
     display: block
     font-size: 0.7em
@@ -50,3 +52,9 @@
       &:hover
         background: darken(dodgerblue, 15)
         border-color: darken(dodgerblue, 15)
+  &_gdpr
+    color: $dark-grey
+    font-size: 0.7em
+    transition: all ease-in-out 0.1s
+    &:hover, &:focus
+      color: dodgerblue
