@@ -1,0 +1,54 @@
+{% extends '@Portfolio/article.html.twig' %}
+
+{# Generating links below article #}
+
+{% set buttons = [{
+    icon: 'arrow-left',
+    text: 'Wróć do portfolio',
+    link: path('portfolio_gdpr')
+}] %}
+
+{% block article %}
+    <h1 class="article_title article_title--big">Hello, world!</h1>
+    <span class="article_author">Oskar Barcz<span class="article_date">, 9 wrzesień 2019r.</span></span>
+    <p class="article_content article_content--justify">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt enim sapiente
+        veritatis? Animi, autem consequuntur dolore eaque exercitationem facilis minus nam nihil, nulla odio officiis
+        porro quaerat quod repellendus velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi distinctio
+        dolore esse et facilis fugiat harum iusto modi necessitatibus nobis, nulla perspiciatis provident qui quisquam
+        similique sit ullam voluptatem voluptatibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Blanditiis, ipsum, rem. Autem dolor eos et in ipsum labore laudantium minus molestias, necessitatibus nihil
+        nulla quis rem rerum sit tempora voluptas.
+    </p>
+    <p class="article_content article_content--justify">
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt enim sapiente
+        veritatis? Animi, autem consequuntur dolore eaque exercitationem facilis minus nam nihil, nulla odio officiis
+        porro quaerat quod repellendus velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi distinctio
+        dolore esse et facilis fugiat harum iusto modi necessitatibus nobis, nulla perspiciatis provident qui quisquam
+        similique sit ullam voluptatem voluptatibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Blanditiis, ipsum, rem. Autem dolor eos et in ipsum labore laudantium minus molestias, necessitatibus nihil
+        nulla quis rem rerum sit tempora voluptas.
+    </p>
+    <h2 class="article_title">Sth title</h2>
+    <p class="article_content article_content--justify">
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt enim sapiente
+        veritatis? Animi, autem consequuntur dolore eaque exercitationem facilis minus nam nihil, nulla odio officiis
+        porro quaerat quod repellendus velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi distinctio
+        dolore esse et facilis fugiat harum iusto modi necessitatibus nobis, nulla perspiciatis provident qui quisquam
+        similique sit ullam voluptatem voluptatibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Blanditiis, ipsum, rem. Autem dolor eos et in ipsum labore laudantium minus molestias, necessitatibus nihil
+        nulla quis rem rerum sit tempora voluptas.
+    </p>
+    <h3 class="article_title article_title--small">Other titile</h3>
+    <p class="article_content article_content--justify">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt enim sapiente
+        veritatis? Animi, autem consequuntur dolore eaque exercitationem facilis minus nam nihil, nulla odio officiis
+        porro quaerat quod repellendus velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi distinctio
+        dolore esse et facilis fugiat harum iusto modi necessitatibus nobis, nulla perspiciatis provident qui quisquam
+        similique sit ullam voluptatem voluptatibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Blanditiis, ipsum, rem. Autem dolor eos et in ipsum labore laudantium minus molestias, necessitatibus nihil
+        nulla quis rem rerum sit tempora voluptas.
+    </p>
+{% endblock %}

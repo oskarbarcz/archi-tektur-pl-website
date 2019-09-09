@@ -36,4 +36,15 @@ class PortfolioController extends AbstractController
     {
         return $this->render('@Portfolio/blog-soon.html.twig');
     }
+
+    /**
+     * @Route({
+     *     "pl": "/przetwarzanie-danych-osobowych",
+     *     "en": "/gdpr"
+     * }, name="portfolio_gdpr")
+     */
+    public function gdpr(): Response
+    {
+        return $this->render('@Portfolio/subpages/gdpr.html.twig');
+    }
 }
