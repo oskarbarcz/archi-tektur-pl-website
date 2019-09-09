@@ -63,7 +63,7 @@ class FormSubmitController extends AbstractFOSRestController
             'TEST WIADOMOŚCI',
             'dev@archi-tektur.pl',
             [
-                'kontakt@archi-tektur.pl',
+                'alleluja669@gmail.com',
                 $contactDataFromForm->getEmail(),
             ],
             sprintf(
