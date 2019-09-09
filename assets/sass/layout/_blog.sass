@@ -1,16 +1,27 @@
 .blog
-  text-align: center
-  padding: 30px
-  &_letter
-    padding: 15px
-    display: inline-block
-    font-size: 3em
+  width: 100%
+  max-width: 800px
+  height: 100%
+  display: flex
+  align-items: center
+  flex-direction: column
+  margin: 0 auto
+  &_title
+    font-size: 10em
     font-weight: bold
-    font-family: $title-font-stack
-    color: #F8F9FA
-    &:nth-of-type(even)
-      transform: skewY(15deg)
-      background-color: darken(#ff2800, 10)
-    &:nth-of-type(odd)
-      transform: skewY(-15deg)
-      background-color: lighten(#ff2800, 10)
+    color: $brand-color
+  &_text
+    font-size: 2em
+    font-weight: bold
+    color: $mid-grey
+  &_back-button
+    color: white
+    margin: 20px
+    background: $brand-color
+    border-radius: 4px
+    padding: 4px 15px
+    transition: 0.1s ease-in-out all
+    @include shadow(1)
+    &:focus, &:hover
+      @include shadow(2)
+      background: darken($brand-color, 10)
