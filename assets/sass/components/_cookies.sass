@@ -1,0 +1,38 @@
+.cookies
+  position: fixed
+  color: $light-grey
+  width: 100%
+  bottom: 0
+  background: #292929
+  height: 60px
+  @include shadow(5)
+  &_limiter
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 1200px
+    height: 60px
+    width: 90%
+    margin: 0 auto
+  &_image
+    height: 60px
+    margin: 0 20px
+  &_info
+    font-size: 0.8em
+  &_link
+    color: $brand-color
+  &_close
+    cursor: pointer
+    position: absolute
+    right: 0
+    bottom: 0
+    height: 60px
+    width: 60px
+    color: $brand-color
+    background: #292929
+    border: none
+    outline: none
+    font-size: 2.5em
+    &:hover, &:focus
+      background: $brand-color
+      color: $light-grey
