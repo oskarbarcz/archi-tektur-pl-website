@@ -1,23 +1,25 @@
 .cookies
+  display: flex
+  flex-direction: column
   position: fixed
+  align-items: center
+  justify-content: flex-start
   color: $light-grey
-  width: 100%
+  right: 0
   bottom: 0
   background: #292929
-  height: 60px
+  height: 250px
+  width: 300px
+  padding: 15px
   @include shadow(5)
-  &_limiter
-    display: flex
-    align-items: center
-    justify-content: center
-    max-width: 1200px
-    height: 60px
-    width: 90%
-    margin: 0 auto
   &_image
-    height: 60px
-    margin: 0 20px
+    display: block
+    height: 120px
+    margin: 0 auto
+    padding-right: 30px
   &_info
+    display: block
+    text-align: left
     font-size: 0.8em
   &_link
     color: $brand-color
@@ -25,14 +27,15 @@
     cursor: pointer
     position: absolute
     right: 0
-    bottom: 0
-    height: 60px
-    width: 60px
+    bottom: calc(250px - 45px)
+    height: 45px
+    width: 45px
     color: $brand-color
     background: #292929
     border: none
     outline: none
-    font-size: 2.5em
+    font-size: 2em
+    transition: 0.1s ease-in-out all
     &:hover, &:focus
       background: $brand-color
       color: $light-grey
