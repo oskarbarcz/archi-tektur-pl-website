@@ -7,11 +7,6 @@
 /vendor/
 /.idea/
 ###< symfony/framework-bundle ###
-
-###> symfony/web-server-bundle ###
-/.web-server-pid
-###< symfony/web-server-bundle ###
-
 ###> symfony/webpack-encore-bundle ###
 /node_modules
 /public/build
