@@ -35,6 +35,6 @@ class PortfolioController extends AbstractController
      */
     public function furtherBlogLink(): NotFoundHttpException
     {
-        $this->createNotFoundException();
+        throw $this->createNotFoundException();
     }
 }
