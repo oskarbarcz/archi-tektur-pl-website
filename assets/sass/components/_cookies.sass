@@ -1,0 +1,50 @@
+.cookies
+  z-index: 10000
+  opacity: 0
+  display: flex
+  flex-direction: column
+  position: fixed
+  align-items: center
+  justify-content: flex-start
+  color: $light-grey
+  right: 0
+  bottom: 0
+  background: #292929
+  height: 250px
+  width: 300px
+  padding: 15px
+  border-top-left-radius: 40px
+  @include shadow(5)
+  transition: 0.1s ease-in-out all
+  @media (max-width: 500px)
+    width: 100%
+    border-top-left-radius: 0
+  &--visible
+    opacity: 1
+  &_image
+    display: block
+    height: 120px
+    margin: 0 auto
+    padding-right: 30px
+  &_info
+    display: block
+    text-align: left
+    font-size: 0.8em
+  &_link
+    color: $brand-color
+  &_close
+    cursor: pointer
+    position: absolute
+    right: 0
+    bottom: calc(250px - 45px)
+    height: 45px
+    width: 45px
+    color: $brand-color
+    background: #292929
+    border: none
+    outline: none
+    font-size: 2em
+    transition: 0.1s ease-in-out all
+    &:hover, &:focus
+      background: $brand-color
+      color: $light-grey

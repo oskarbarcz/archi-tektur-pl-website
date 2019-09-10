@@ -1,0 +1,60 @@
+{% extends '@Portfolio/article.html.twig' %}
+
+{# Generating links below article #}
+{% set buttons = [{
+    icon: 'arrow-left',
+    text: 'Wróć do portfolio',
+    link: path('portfolio_index')
+}] %}
+
+{% block title %}Polityka prywatności | Portfolio{% endblock %}
+
+{% block article %}
+    <h1 class="article_title article_title--big">Polityka prywatności</h1>
+    <span class="article_author">Oskar Barcz<span class="article_date">, 9 wrzesień 2019r.</span></span>
+    <p class="article_content article_content--justify">
+        Cześć! Jak zapewne wiesz, od 25 maja 2018 roku jestem zobowiązany informować Cię w określony sposób o
+        wykorzystaniu Twoich danych osobowych (Ogólne rozporządzenie o ochronie danych osobowych). Po to właśnie
+        powstał ten dokument.
+    </p>
+    <h2 class="article_title">Pliki Cookies</h2>
+    <p class="article_content article_content--justify">
+        Wchodząc na moją stronę zgadzasz się na zapisywanie na Twoim urządzeniu (telefon, tablet, komputer), w
+        pamięci przeglądarki specjalnych plików, tzw. cookies. Te pliki ułatwiają mi przechowywanie wielu informacji,
+        pomagają w optymalnym działaniu aplikacji.
+
+        Jeżeli z jakiegoś powodu chcesz zablokować możliwość zapisywania plików Cookie - możesz to oczywiście zrobić, <a
+                class="article_link" href="https://jakwylaczyccookie.pl">tutaj</a> masz opisane jak. Pamiętaj jednak, że
+        wtedy portfolio, blog, jak i każda inna aplikacja mojego autorstwa może nie działać właściwie, pewne funkcje
+        mogą być niedostępne, ograniczone.
+    </p>
+    <h2 class="article_title article_title--small">Co przechowuję w plikach cookies?</h2>
+    <p class="article_content article_content--justify">
+        W plikach tych przechowuję między innymi informacje o tymczasowych ustawieniach wyglądu aplikacji, zmienne
+        sesyjne ułatwiające Ci ponowne logowanie się do serwisów i usług i wiele innych. Przechowywane informacje są
+        bezpieczne, jest to tylko tekst który moja aplikacja wykorzystuje by pewne rzeczy robić szybciej, wygodniej
+        dla Ciebie. Administrator nie ponosi żadnej odpowiedzialności za nieprawidłowo działające funkcje serwisów i
+        usług w przypadku gdy Użytkownik ograniczy w jakikolwiek sposób możliwość zapisywania i odczytu plików Cookie.
+    </p>
+    <h2 class="article_title">Formularz kontaktowy</h2>
+    <p class="article_content article_content--justify">
+        Wypełniając formularz kontaktowy wyrażasz zgodę na przetwarzanie podanych w nim danych osobowych w zakresie
+        wymaganym do odpowiedzi na zadane w nim pytanie. Serwer w swoich logach zachowuje informacje o parametrach
+        połączenia (oznaczenie czasu, adres IP), które pozwalają walczyć ze spamem.
+    </p>
+    <h3 class="article_title article_title--small">Jak przetwarzane są te dane?</h3>
+    <p class="article_content article_content--justify">
+        Dane przetwarzane są w stopniu, który najmniej inwazyjnie pozwala mi się z Tobą skontaktować. W chwili
+        podsumowania formularza jego dane trafiają na mój serwer. On zleca wysłanie wiadomości e-mail do mnie, z
+        zapytaniem i Twoimi danymi pozwalającymi na kontakt, Ty natomiast otrzymasz potwierdzenie wysłania
+        formularza, wraz ze wszystkimi danymi które w nim wprowadziłeś. Żadne dane nie są przetrzymywane stale na
+        serwerze, są one automatycznie usuwane po wysłaniu wiadomości e-mail.
+    </p>
+    <h2 class="article_title article_title">Zmiana i usunięcie danych osobowych</h2>
+    <p class="article_content article_content--justify">
+        Mimo że nie przechowuję żadnych Twoich danych osobowych stale na serwerze, a jedynie w historii wiadomości
+        e-mail, to nadal zachowujesz prawo do ich korekty i/lub usunięcia. Abym usunął wszystkie informacje związane
+        z Tobą, wypełnij formularz na stronie głównej portfolio. Użyj tych danych, które mają zostać usunięte, a w
+        treści wiadomości określ, czy dane mam poprawić, czy usunąć całkowicie.
+    </p>
+{% endblock %}

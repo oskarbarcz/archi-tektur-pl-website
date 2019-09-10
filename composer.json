@@ -22,7 +22,9 @@
     "symfony/validator": "4.*",
     "symfony/webpack-encore-bundle": "1.6.*",
     "symfony/yaml": "4.*",
-    "twig/extensions": "1.*"
+    "twig/extensions": "1.*",
+    "symfony/stopwatch": "4.*",
+    "symfony/web-profiler-bundle": "4.*"
   },
   "config": {
     "preferred-install": {
@@ -70,8 +72,6 @@
     }
   },
   "require-dev": {
-    "symfony/stopwatch": "4.*",
-    "symfony/web-profiler-bundle": "4.*",
     "phpunit/phpunit": "^8.3",
     "roave/security-advisories": "dev-master",
     "symfony/css-selector": "4.*",

@@ -1,0 +1,58 @@
+.article
+  display: flex
+  background: $light-grey
+  align-items: center
+  min-height: 100%
+  flex-direction: column
+  &_sheet
+    position: relative
+    display: block
+    height: auto
+    min-height: 70vh
+    max-width: 800px
+    margin: 50px 0
+    padding: 80px
+    background: white
+    @include shadow(1)
+  &_author
+    display: block
+    padding-left: 15px
+    font-size: 0.8em
+    color: $brand-color
+  &_date
+    color: $dark-grey
+  &_title
+    font-size: 1.5em
+    color: $mid-grey
+    font-weight: bold
+    margin-bottom: -10px
+    &--big
+      font-size: 2.5em
+      margin-bottom: -5px
+    &--small
+      font-size: 1em
+      margin-bottom: -10px
+  &_content
+    margin-top: 10px
+    font-family: $text-font-stack
+    line-height: 1.1
+    font-size: 0.85em
+    &:first-of-type
+      margin-top: 5px
+    &--justify, &--j
+      text-indent: 20px
+      text-align: justify
+  &_logo
+    position: absolute
+    left: 30px
+    top: 30px
+    height: 50px
+    width: auto
+    object-fit: cover
+  &_link
+    font-weight: bold
+    text-decoration: underline
+    font-size: 0.85em
+    color: $brand-color
+    &:hover, &:focus
+      color: darken($brand-color, 20)

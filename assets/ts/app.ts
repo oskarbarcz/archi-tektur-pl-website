@@ -1,6 +1,7 @@
 import {Navigation} from "./portfolio/Navigation/Navigation";
 import {FormHandler} from "./portfolio/Form/FormHandler";
 import {SmoothScroll} from "./portfolio/Navigation/SmoothScroll";
+import {GdprManager} from "./portfolio/GDPR/GdprManager";
 
 require('../sass/main.sass');
 
@@ -24,3 +25,10 @@ new Navigation(
 );
 
 new SmoothScroll(true);
+
+if (document.querySelector('#gdpr-info')) {
+    new GdprManager(
+        document.querySelector('#gdpr-info'),
+        document.querySelector('.cookies_close'),
+    );
+}
