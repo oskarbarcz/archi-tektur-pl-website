@@ -17,8 +17,6 @@ class GdprManager {
         this._closeButton = closeButton;
         const cookieValue = Cookies.get(this.COOKIE_NAME);
 
-        console.log(cookieValue);
-
         if (cookieValue) {
             // user clicked before
             this._box.remove();
@@ -35,7 +33,7 @@ class GdprManager {
             // toggle class
             this._box.classList.add('cookies--visible');
             // add cookie
-            Cookies.set(this.COOKIE_NAME, true);
+            Cookies.set(this.COOKIE_NAME, {acceptedOn: new Date()}, {expires: 7});
             // remove after 100ms
             setTimeout(() => {
                 this._box.remove();

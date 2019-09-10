@@ -26,7 +26,9 @@ new Navigation(
 
 new SmoothScroll(true);
 
-new GdprManager(
-    document.querySelector('#gdpr-info'),
-    document.querySelector('.cookies_close'),
-);
+if (document.querySelector('#gdpr-info')) {
+    new GdprManager(
+        document.querySelector('#gdpr-info'),
+        document.querySelector('.cookies_close'),
+    );
+}

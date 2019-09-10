@@ -3,6 +3,7 @@
 namespace App\Portfolio\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -13,6 +14,8 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class PortfolioController extends AbstractController
 {
+    private const GDPR_COOKIE_NAME = 'ACCEPT_GDPR';
+
     /**
      * Prints main HTML Portfolio page
      *
@@ -20,10 +23,14 @@ class PortfolioController extends AbstractController
      *     "pl": "/",
      *     "en": "/en"
      * }, name="portfolio_index")
+     * @param Request $request
+     * @return Response
      */
-    public function portfolio(): Response
+    public function portfolio(Request $request): Response
     {
-        return $this->render('@Portfolio/portfolio.html.twig');
+        return $this->render('@Portfolio/portfolio.html.twig', [
+            'isGdprCookie' => (bool)$request->cookies->get(self::GDPR_COOKIE_NAME),
+        ]);
     }
 
     /**
