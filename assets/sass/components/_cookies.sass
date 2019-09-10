@@ -1,5 +1,5 @@
 .cookies
-  opacity: 1
+  opacity: 0
   display: flex
   flex-direction: column
   position: fixed
@@ -15,8 +15,8 @@
   border-top-left-radius: 40px
   @include shadow(5)
   transition: 0.1s ease-in-out all
-  &--invisible
-    opacity: 0
+  &--visible
+    opacity: 1
   &_image
     display: block
     height: 120px
