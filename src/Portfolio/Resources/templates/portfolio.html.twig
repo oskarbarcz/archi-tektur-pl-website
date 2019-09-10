@@ -1,4 +1,8 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}Oskar Barcz - PHP Developer dla Ciebie{% endblock %}
+
+
 {% block body %}
     {% include '@Portfolio/sections/nav.html.twig' %}
     {% include '@Portfolio/sections/about-me.html.twig' %}
@@ -6,4 +10,7 @@
     {% include '@Portfolio/sections/stack.twig' %}
     {% include '@Portfolio/sections/contact-me.twig' %}
     {% include '@Portfolio/sections/footer.twig' %}
+    {% if not app.request.cookies.has('ACCEPT_GDPR') %}
+        {% include '@Portfolio/sections/cookies.html.twig' %}
+    {% endif %}
 {% endblock %}

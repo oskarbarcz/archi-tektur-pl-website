@@ -1,0 +1,14 @@
+.buttons
+  display: block
+  width: 100%
+  max-width: 800px
+  margin: 0 auto 50px
+  &_link
+    color: white
+    background: dodgerblue
+    padding: 6px 15px
+    @include shadow(1)
+    transition: 0.1s ease-in-out all
+    &:hover
+      background: darken(dodgerblue, 10)
+      @include shadow(2)

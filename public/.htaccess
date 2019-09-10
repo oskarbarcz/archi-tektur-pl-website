@@ -1,3 +1,6 @@
+# MyDevil PHP 7.3 choose
+AddType application/x-httpd-php73 .php
+
 # Use the front controller as index file. It serves as a fallback solution when
 # every other rewrite/redirect fails (e.g. in an aliased environment without
 # mod_rewrite). Additionally, this reduces the matching process for the
@@ -66,3 +69,24 @@ DirectoryIndex index.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
+
+# cache
+<IfModule mod_headers.c>
+    # WEEK
+    <FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+        Header set Cache-Control "max-age=604800, public"
+    </FilesMatch>
+
+    # WEEK
+    <FilesMatch "\.(js|css|swf)$">
+        Header set Cache-Control "max-age=604800"
+    </FilesMatch>
+</IfModule>
+
+# no sniffing header
+Header set X-Content-Type-Options nosniff
+Header set Strict-Transport-Security: max-age=60480
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Frame-Options: sameorigin
+Header set Expect-CT: max-age=604800
+Header set Content-Security-Policy: script-src 'self'
