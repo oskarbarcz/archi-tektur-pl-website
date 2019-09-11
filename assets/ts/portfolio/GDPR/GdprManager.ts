@@ -33,7 +33,7 @@ class GdprManager {
             // toggle class
             this._box.classList.add('cookies--visible');
             // add cookie
-            Cookies.set(this.COOKIE_NAME, {acceptedOn: new Date()}, {expires: 7});
+            Cookies.set(this.COOKIE_NAME, {acceptedOn: new Date()}, {expires: 7, path: ''});
             // remove after 100ms
             setTimeout(() => {
                 this._box.remove();
