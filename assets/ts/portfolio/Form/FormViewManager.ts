@@ -1,0 +1,4 @@
+class FormViewManager {
+    public constructor() {
+    }
+}

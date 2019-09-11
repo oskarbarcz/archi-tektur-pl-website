@@ -1,4 +1,4 @@
-import {FormData} from "./FormData";
+import {FormData} from "../ValueObjects/FormData";
 
 class FormDataSender {
 
