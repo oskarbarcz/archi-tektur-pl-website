@@ -46,7 +46,7 @@ class FormSubmitController extends AbstractFOSRestController
         // change raw form into ContactFormData
         /** @var ContactFormData $contactDataFromForm */
         $contactDataFromForm = $this->serializer->deserialize(
-            $request->getContent(),
+            (string)$request->getContent(),
             ContactFormData::class,
             'json'
         );
