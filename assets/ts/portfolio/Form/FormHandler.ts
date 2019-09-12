@@ -1,3 +1,5 @@
+import {FormViewManager} from "./FormViewManager";
+
 class FormHandler {
     private _formViewManager: FormViewManager;
 
@@ -8,7 +10,7 @@ class FormHandler {
     public handleSubmit() {
     }
 
-    public reset() {
+    public resetFields() {
     }
 }
 

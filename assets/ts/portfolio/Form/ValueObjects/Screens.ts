@@ -1,5 +1,7 @@
 class Screens {
-    public readonly form: HTMLElement;
-    public readonly confirm: HTMLElement;
-    public readonly error: HTMLElement;
+    public FORM: HTMLElement;
+    public CONFIRM: HTMLElement;
+    public ERROR: HTMLElement;
 }
+
+export {Screens};
