@@ -19,6 +19,8 @@ class FormDataSender {
             .then(res => {
                 if (res.status == 200) {
                     viewManager.showConfirmation()
+                } else {
+                    viewManager.showError();
                 }
             })
             .catch(err => {
