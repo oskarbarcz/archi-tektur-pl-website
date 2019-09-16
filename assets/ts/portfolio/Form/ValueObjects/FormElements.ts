@@ -1,7 +1,10 @@
 class FormElements {
-    props;
-
-    public constructor(props) {
-        this.props = props;
-    }
+    public form: HTMLElement;
+    public name: HTMLInputElement;
+    public email: HTMLInputElement;
+    public reason: HTMLInputElement;
+    public content: HTMLInputElement;
+    public submit: HTMLInputElement;
 }
+
+export {FormElements};
