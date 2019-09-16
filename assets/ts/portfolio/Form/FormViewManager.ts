@@ -5,6 +5,28 @@ class FormViewManager {
 
     public constructor(screens: Screens) {
         this._screens = screens;
+        this.showForm(true);
+    }
+
+    public showForm(emptied: boolean = false) {
+        this._unshowAll();
+        this._screens.form.classList.add('window_content--visible');
+    }
+
+    public showError() {
+        this._unshowAll();
+        this._screens.error.classList.add('window_content--visible');
+    }
+
+    public showConfirmation() {
+        this._unshowAll();
+        this._screens.confirm.classList.add('window_content--visible');
+    }
+
+    private _unshowAll() {
+        this._screens.form.classList.remove('window_content--visible');
+        this._screens.error.classList.remove('window_content--visible');
+        this._screens.confirm.classList.remove('window_content--visible');
     }
 }
 

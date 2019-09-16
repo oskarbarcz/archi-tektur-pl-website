@@ -18,7 +18,9 @@ class FormHandler {
 
     public handleSubmit() {
         //handle
-        console.log(FormDataTransformer.transform(this._formElements));
+        let data = FormDataTransformer.transform(this._formElements);
+        console.log(data);
+        this._formViewManager.showConfirmation();
     }
 
     public resetFields() {

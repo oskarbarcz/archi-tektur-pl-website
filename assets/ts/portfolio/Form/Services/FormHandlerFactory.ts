@@ -16,9 +16,9 @@ class FormHandlerFactory {
     private static buildScreens() {
         let screens = new Screens();
 
-        screens.form = document.querySelector('form--success');
-        screens.error = document.querySelector('form--success');
-        screens.confirm = document.querySelector('form--success');
+        screens.form = document.querySelector('#window-form');
+        screens.error = document.querySelector('#window-error');
+        screens.confirm = document.querySelector('#window-confirm');
 
         return screens;
     }
