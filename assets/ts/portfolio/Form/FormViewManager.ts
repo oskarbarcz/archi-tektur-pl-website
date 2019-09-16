@@ -5,10 +5,10 @@ class FormViewManager {
 
     public constructor(screens: Screens) {
         this._screens = screens;
-        this.showForm(true);
+        this.showForm();
     }
 
-    public showForm(emptied: boolean = false) {
+    public showForm() {
         this._unshowAll();
         this._screens.form.classList.add('window_content--visible');
     }
