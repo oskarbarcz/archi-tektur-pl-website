@@ -1,3 +1,0 @@
-interface Senderable {
-    send(): boolean;
-}

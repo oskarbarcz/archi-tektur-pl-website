@@ -6,8 +6,4 @@ export class FormData {
     public email: string;
     public reason: string;
     public content: string;
-
-    public static validate(): boolean {
-        return true;
-    }
 }

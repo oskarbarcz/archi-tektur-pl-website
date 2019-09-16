@@ -1,90 +1,46 @@
-import {FormDataSender} from "./FormDataSender";
-import {FormData} from "./FormData";
+import {FormViewManager} from "./FormViewManager";
+import {FormElements} from "./ValueObjects/FormElements";
+import {FormDataTransformer} from "./ValueObjects/FormDataTransformer";
+import {FormDataSender} from "./Services/FormDataSender";
 
 class FormHandler {
-    private _formElements;
-    private _sender: FormDataSender;
+    private readonly _formViewManager: FormViewManager;
+    private readonly _formElements: FormElements;
 
-    public constructor(formElements) {
+    public constructor(manager: FormViewManager, formElements: FormElements) {
+        this._formViewManager = manager;
         this._formElements = formElements;
-        this._sender = new FormDataSender();
 
-        this._init();
-    }
+        document.querySelector("#button-error-back").addEventListener('click', () => {
+                this._formViewManager.showForm()
+            }
+        );
 
-    private _init() {
-        // listen for writing in textarea
-        this._formElements.content.addEventListener('keydown', this.autoEnlargeTextarea);
+        document.querySelector("#button-confirm-back").addEventListener('click', () => {
+                this.resetFields();
+                this._formViewManager.showForm()
+            }
+        );
 
-        // listen for form submit
-        this._formElements.submit.addEventListener('click', (event) => {
+        formElements.submit.addEventListener('click', (event) => {
             event.preventDefault();
-            this._submitForm();
-        });
-
-        // listen for going back to form
-        this._formElements.backButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            this._switchScreens();
-            this._resetForm()
+            this.handleSubmit();
         });
     }
 
-    /**
-     * Enlarges textarea while writing
-     * @param event
-     */
-    private autoEnlargeTextarea(event: Event) {
-        if (event.target instanceof HTMLElement) {
-            let el = event.target;
-            setTimeout(function () {
-                el.style.cssText = 'height:' + (el.scrollHeight + 5.1) + 'px';
-            }, 0);
-        }
+    public handleSubmit() {
+        //handle
+        let data = FormDataTransformer.transform(this._formElements);
+        let sender = new FormDataSender;
+        sender.send(data, this._formViewManager);
     }
 
-    /**
-     * Handles form submitting
-     * @private
-     */
-    private _submitForm() {
-        const data = new FormData();
-        data.name = this._formElements.name.value;
-        data.email = this._formElements.email.value;
-        data.reason = this._formElements.reason.value;
-        data.content = this._formElements.content.value;
-
-        // if data are valid, send
-        if (!FormData.validate()) {
-            // handle errors
-        }
-        let result = this._sender.send(data);
-        if (result) {
-            this._switchScreens()
-        }
-
+    public resetFields() {
+        this._formElements.name.value = null;
+        this._formElements.email.value = null;
+        this._formElements.reason.value = this._formElements.reason.defaultValue;
+        this._formElements.content.value = null;
     }
-
-    /**
-     * Switches between screens
-     * @private
-     */
-    private _switchScreens() {
-        this._formElements.formScreen.classList.toggle('window_content--invisible');
-        this._formElements.confirmScreen.classList.toggle('window_content--invisible');
-    }
-
-    /**
-     * Resets form inputs
-     * @private
-     */
-    private _resetForm() {
-        this._formElements.name.value = '';
-        this._formElements.email.value = '';
-        this._formElements.reason.value = 'webpage';
-        this._formElements.content.value = '';
-    }
-
 }
 
 export {FormHandler};

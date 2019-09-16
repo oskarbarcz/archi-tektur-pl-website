@@ -1,10 +1,11 @@
-import {FormData} from "./FormData";
+import {FormData} from "../ValueObjects/FormData";
+import {FormViewManager} from "../FormViewManager";
 
 class FormDataSender {
 
     urlPath: string = '/api/catch-form';
 
-    public send(formData: FormData) {
+    public send(formData: FormData, viewManager: FormViewManager) {
 
         let params = {
             body: JSON.stringify(formData),
@@ -17,10 +18,14 @@ class FormDataSender {
             })
             .then(res => {
                 if (res.status == 200) {
-                    console.log('Prawidłowo wysłano wiadomość e-mail!');
+                    viewManager.showConfirmation()
+                } else {
+                    viewManager.showError();
                 }
             })
             .catch(err => {
+                viewManager.showError();
+                console.log(err);
             });
 
         return true;
