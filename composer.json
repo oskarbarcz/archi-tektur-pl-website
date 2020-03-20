@@ -7,24 +7,21 @@
     "ext-iconv": "*",
     "ext-json": "*",
     "doctrine/annotations": "^1.7",
-    "friendsofsymfony/rest-bundle": "^2.5",
-    "jms/serializer-bundle": "3.4.*",
     "sensio/framework-extra-bundle": "^5.4",
     "symfony/apache-pack": "1.0.*",
-    "symfony/asset": "4.*",
-    "symfony/console": "4.*",
-    "symfony/dotenv": "4.*",
+    "symfony/asset": "5.*",
+    "symfony/console": "5.*",
+    "symfony/dotenv": "5.*",
     "symfony/flex": "1.4.*",
-    "symfony/framework-bundle": "4.*",
-    "symfony/security-csrf": "4.*",
+    "symfony/framework-bundle": "5.*",
     "symfony/swiftmailer-bundle": "^3.2",
-    "symfony/twig-bundle": "4.*",
-    "symfony/validator": "4.*",
-    "symfony/webpack-encore-bundle": "1.6.*",
-    "symfony/yaml": "4.*",
+    "symfony/twig-bundle": "5.*",
+    "symfony/validator": "5.*",
+    "symfony/webpack-encore-bundle": "1.7.*",
+    "symfony/yaml": "5.*",
     "twig/extensions": "1.*",
-    "symfony/stopwatch": "4.*",
-    "symfony/web-profiler-bundle": "4.*"
+    "symfony/stopwatch": "5.*",
+    "symfony/web-profiler-bundle": "5.*"
   },
   "config": {
     "preferred-install": {
@@ -68,12 +65,12 @@
   "extra": {
     "symfony": {
       "allow-contrib": false,
-      "require": "4.*"
+      "require": "5.*"
     }
   },
   "require-dev": {
     "phpmd/phpmd": "^2.7",
-    "phpstan/phpstan": "^0.11.15",
+    "phpstan/phpstan": "0.12.*",
     "phpunit/phpunit": "^8.3",
     "roave/security-advisories": "dev-master",
     "symfony/css-selector": "4.*",
