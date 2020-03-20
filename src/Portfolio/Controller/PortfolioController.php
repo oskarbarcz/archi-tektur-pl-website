@@ -21,7 +21,7 @@ class PortfolioController extends AbstractController
      */
     public function portfolio(): Response
     {
-        return $this->render('@Portfolio/portfolio.html.twig');
+        return $this->render('portfolio.html.twig');
     }
 
     /**
@@ -32,7 +32,7 @@ class PortfolioController extends AbstractController
      */
     public function blog(): Response
     {
-        return $this->render('@Portfolio/blog-soon.html.twig');
+        return $this->render('blog-soon.html.twig');
     }
 
     /**
@@ -43,6 +43,6 @@ class PortfolioController extends AbstractController
      */
     public function gdpr(): Response
     {
-        return $this->render('@Portfolio/subpages/gdpr.html.twig');
+        return $this->render('subpages/gdpr.html.twig');
     }
 }
