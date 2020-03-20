@@ -1,7 +1,9 @@
 .contact-me
   padding-top: 50px
+  padding-bottom: 20px
   @media (max-width: 800px)
     padding-top: 20px
+    padding-bottom: 0
   &_container
     display: flex
     align-items: center
@@ -35,15 +37,16 @@
     flex-direction: row
     margin: 10px
     width: 250px
-    transition: 0.1s ease-in-out all
+    transition: 0.15s ease-in-out all
     &:hover
       @include shadow(2)
       color: #FF2800
-      background: #111
+      background: #111111
       border-radius: 5px
     &:hover .contact-me_icon
       transform: scale(1.25)
   &_icon
+    flex-shrink: 0
     display: flex
     align-items: center
     justify-content: center
@@ -52,6 +55,7 @@
     height: 50px
     width: 50px
     font-size: 1.3em
+    transition: 0.15s ease-in-out all
   &_name
     letter-spacing: 2px
     font-weight: bold

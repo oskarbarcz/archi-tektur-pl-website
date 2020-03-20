@@ -1,16 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace App\Portfolio\Services;
+namespace App\Services;
 
-use Swift_Mailer as MailerService;
+use Swift_Mailer;
 use Swift_Message as EmailMessage;
 
 class MailerFacade
 {
-    /** @var MailerService */
-    private $mailer;
+    private Swift_Mailer $mailer;
 
-    public function __construct(MailerService $mailer)
+    public function __construct(Swift_Mailer $mailer)
     {
         $this->mailer = $mailer;
     }
