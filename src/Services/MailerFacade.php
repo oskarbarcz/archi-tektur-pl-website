@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Portfolio\Services;
+namespace App\Services;
 
 use Swift_Mailer;
 use Swift_Message as EmailMessage;

@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace App\Portfolio\Controller;
+namespace App\Controller;
 
-use App\Portfolio\Services\MailerFacade;
-use App\Portfolio\ValueObjects\ContactFormData;
+use App\Services\MailerFacade;
+use App\ValueObjects\ContactFormData;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
