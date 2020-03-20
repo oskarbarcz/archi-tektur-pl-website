@@ -14,9 +14,6 @@
             "config/routes/annotations.yaml"
         ]
     },
-    "doctrine/inflector": {
-        "version": "v1.3.0"
-    },
     "doctrine/instantiator": {
         "version": "1.2.0"
     },
@@ -26,112 +23,8 @@
     "egulias/email-validator": {
         "version": "2.1.10"
     },
-    "friendsofsymfony/rest-bundle": {
-        "version": "2.2",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "2.2",
-            "ref": "258300d52be6ad59b32a888d5ddafbf9638540ff"
-        },
-        "files": [
-            "config/packages/fos_rest.yaml"
-        ]
-    },
-    "hoa/compiler": {
-        "version": "3.17.08.08"
-    },
-    "hoa/consistency": {
-        "version": "1.17.05.02"
-    },
-    "hoa/event": {
-        "version": "1.17.01.13"
-    },
-    "hoa/exception": {
-        "version": "1.17.01.16"
-    },
-    "hoa/file": {
-        "version": "1.17.07.11"
-    },
-    "hoa/iterator": {
-        "version": "2.17.01.10"
-    },
-    "hoa/math": {
-        "version": "1.17.05.16"
-    },
-    "hoa/protocol": {
-        "version": "1.17.01.14"
-    },
-    "hoa/regex": {
-        "version": "1.17.01.13"
-    },
-    "hoa/stream": {
-        "version": "1.17.02.21"
-    },
-    "hoa/ustring": {
-        "version": "4.17.01.16"
-    },
-    "hoa/visitor": {
-        "version": "2.17.01.16"
-    },
-    "hoa/zformat": {
-        "version": "1.17.01.10"
-    },
-    "jean85/pretty-package-versions": {
-        "version": "1.2"
-    },
-    "jms/metadata": {
-        "version": "2.0.0"
-    },
-    "jms/serializer": {
-        "version": "3.1.1"
-    },
-    "jms/serializer-bundle": {
-        "version": "3.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "3.0",
-            "ref": "384cec52df45f3bfd46a09930d6960a58872b268"
-        },
-        "files": [
-            "config/packages/dev/jms_serializer.yaml",
-            "config/packages/jms_serializer.yaml",
-            "config/packages/prod/jms_serializer.yaml"
-        ]
-    },
     "myclabs/deep-copy": {
         "version": "1.9.3"
-    },
-    "nette/bootstrap": {
-        "version": "v3.0.0"
-    },
-    "nette/di": {
-        "version": "v3.0.1"
-    },
-    "nette/finder": {
-        "version": "v2.5.0"
-    },
-    "nette/neon": {
-        "version": "v3.0.0"
-    },
-    "nette/php-generator": {
-        "version": "v3.2.3"
-    },
-    "nette/robot-loader": {
-        "version": "v3.2.0"
-    },
-    "nette/schema": {
-        "version": "v1.0.0"
-    },
-    "nette/utils": {
-        "version": "v3.0.1"
-    },
-    "nikic/php-parser": {
-        "version": "v4.2.4"
-    },
-    "ocramius/package-versions": {
-        "version": "1.5.1"
     },
     "pdepend/pdepend": {
         "version": "2.5.2"
@@ -159,9 +52,6 @@
     },
     "phpspec/prophecy": {
         "version": "1.8.1"
-    },
-    "phpstan/phpdoc-parser": {
-        "version": "0.3.5"
     },
     "phpstan/phpstan": {
         "version": "0.11.15"
@@ -200,6 +90,9 @@
         "version": "1.0.1"
     },
     "psr/container": {
+        "version": "1.0.0"
+    },
+    "psr/event-dispatcher": {
         "version": "1.0.0"
     },
     "psr/log": {
@@ -304,9 +197,6 @@
     },
     "symfony/css-selector": {
         "version": "v4.3.3"
-    },
-    "symfony/debug": {
-        "version": "v4.2.8"
     },
     "symfony/dependency-injection": {
         "version": "v4.2.8"
@@ -538,11 +428,5 @@
     },
     "webmozart/assert": {
         "version": "1.4.0"
-    },
-    "willdurand/jsonp-callback-validator": {
-        "version": "v1.1.0"
-    },
-    "willdurand/negotiation": {
-        "version": "v2.3.1"
     }
 }
