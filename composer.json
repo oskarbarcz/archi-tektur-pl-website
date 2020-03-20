@@ -69,12 +69,12 @@
     }
   },
   "require-dev": {
-    "phpmd/phpmd": "^2.7",
+    "phpmd/phpmd": "2.8.*",
     "phpstan/phpstan": "0.12.*",
-    "phpunit/phpunit": "^8.3",
+    "phpunit/phpunit": "9.0.*",
     "roave/security-advisories": "dev-master",
-    "symfony/css-selector": "4.*",
-    "symfony/phpunit-bridge": "4.3.*",
-    "symfony/test-pack": "^1.0"
+    "symfony/css-selector": "5.0.*",
+    "symfony/phpunit-bridge": "5.0.*",
+    "symfony/test-pack": "1.0.*"
   }
 }
