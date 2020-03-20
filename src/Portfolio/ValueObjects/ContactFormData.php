@@ -32,7 +32,7 @@ class ContactFormData
      * @Assert\Choice({"webpage", "application", "programming", "other"})
      * @Serializer\Type("string")
      */
-    private ?string $reason = null;
+    private ?string $reason = 'other';
 
     /**
      * @Assert\NotNull()
@@ -41,7 +41,7 @@ class ContactFormData
      */
     private ?string $content = null;
 
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -52,7 +52,7 @@ class ContactFormData
         return $this;
     }
 
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
@@ -63,7 +63,7 @@ class ContactFormData
         return $this;
     }
 
-    public function getReason(): string
+    public function getReason(): ?string
     {
         return $this->reason;
     }
@@ -74,7 +74,7 @@ class ContactFormData
         return $this;
     }
 
-    public function getContent(): string
+    public function getContent(): ?string
     {
         return $this->content;
     }
