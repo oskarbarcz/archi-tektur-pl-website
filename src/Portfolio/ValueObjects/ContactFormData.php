@@ -2,6 +2,7 @@
 
 namespace App\Portfolio\ValueObjects;
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -35,6 +36,42 @@ class ContactFormData
      * @Assert\Length(min="10", max="10000")
      */
     private ?string $content = null;
+
+    /**
+     * Create object from compounding variables
+     *
+     * @param string $name
+     * @param string $email
+     * @param string $reason
+     * @param string $content
+     * @return $this
+     */
+    public static function fromPartials(string $name, string $email, string $reason, string $content): self
+    {
+        $obj = new self();
+        $obj->setName($name)
+            ->setEmail($email)
+            ->setReason($reason)
+            ->setContent($content);
+
+        return $obj;
+    }
+
+    /**
+     * Create object from HTTP Request
+     *
+     * @param Request $request
+     * @return ContactFormData
+     */
+    public static function fromRequest(Request $request): self
+    {
+        return self::fromPartials(
+            $request->get('name'),
+            $request->get('email'),
+            $request->get('reason'),
+            $request->get('content')
+        );
+    }
 
     public function getName(): ?string
     {

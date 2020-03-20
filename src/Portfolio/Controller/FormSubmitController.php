@@ -4,12 +4,11 @@ namespace App\Portfolio\Controller;
 
 use App\Portfolio\Services\MailerFacade;
 use App\Portfolio\ValueObjects\ContactFormData;
-use FOS\RestBundle\Controller\AbstractFOSRestController;
-use FOS\RestBundle\Controller\Annotations as Rest;
-use FOS\RestBundle\View\View;
-use JMS\Serializer\SerializerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
@@ -17,40 +16,30 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  *
  * @package App\Controller
  */
-class FormSubmitController extends AbstractFOSRestController
+class FormSubmitController extends AbstractController
 {
     protected MailerFacade $mailer;
-    protected SerializerInterface $serializer;
     protected ValidatorInterface $validator;
 
-    public function __construct(MailerFacade $mailer, SerializerInterface $serializer, ValidatorInterface $validator)
+    public function __construct(MailerFacade $mailer, ValidatorInterface $validator)
     {
         $this->mailer = $mailer;
-        $this->serializer = $serializer;
         $this->validator = $validator;
     }
 
     /**
-     * @Rest\View()
-     * @Rest\Post("/api/catch-form", name="api_mailer")
+     * @Route("/api/catch-form", name="api_mailer", methods={"POST"})
      * @param Request $request
-     * @return View
+     * @return JsonResponse
      */
-    public function catchFormSubmission(Request $request): View
+    public function catchFormSubmission(Request $request): JsonResponse
     {
-        // change raw form into ContactFormData
-        /** @var ContactFormData $contactData */
-        $contactData = $this->serializer->deserialize(
-            (string)$request->getContent(),
-            ContactFormData::class,
-            'json'
-        );
-
+        $contactData = ContactFormData::fromRequest($request);
         $errors = $this->validator->validate($contactData);
 
-        // return error on non-valid data
+        // return errors on non-valid data
         if (count($errors) > 0) {
-            return View::create(['error' => true, 'errors' => $errors], Response::HTTP_BAD_REQUEST);
+            return $this->json(['error' => true, 'errors' => $errors], Response::HTTP_BAD_REQUEST);
         }
 
         // send e-mail
@@ -70,6 +59,6 @@ class FormSubmitController extends AbstractFOSRestController
             'text/plain'
         );
 
-        return View::create(['formData' => $contactData], Response::HTTP_OK);
+        return $this->json(['formData' => $contactData], Response::HTTP_OK);
     }
 }
