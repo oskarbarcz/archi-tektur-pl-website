@@ -19,14 +19,9 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  */
 class FormSubmitController extends AbstractFOSRestController
 {
-    /** @var MailerFacade */
-    protected $mailer;
-
-    /** @var SerializerInterface */
-    protected $serializer;
-
-    /** @var ValidatorInterface */
-    protected $validator;
+    protected MailerFacade $mailer;
+    protected SerializerInterface $serializer;
+    protected ValidatorInterface $validator;
 
     public function __construct(MailerFacade $mailer, SerializerInterface $serializer, ValidatorInterface $validator)
     {
@@ -44,14 +39,14 @@ class FormSubmitController extends AbstractFOSRestController
     public function catchFormSubmission(Request $request): View
     {
         // change raw form into ContactFormData
-        /** @var ContactFormData $contactDataFromForm */
-        $contactDataFromForm = $this->serializer->deserialize(
+        /** @var ContactFormData $contactData */
+        $contactData = $this->serializer->deserialize(
             (string)$request->getContent(),
             ContactFormData::class,
             'json'
         );
 
-        $errors = $this->validator->validate($contactDataFromForm);
+        $errors = $this->validator->validate($contactData);
 
         // return error on non-valid data
         if (count($errors) > 0) {
@@ -64,17 +59,17 @@ class FormSubmitController extends AbstractFOSRestController
             'dev@archi-tektur.pl',
             [
                 'alleluja669@gmail.com',
-                $contactDataFromForm->getEmail(),
+                $contactData->getEmail(),
             ],
             sprintf(
                 'Wysłałeś do mnie wiadomość o treści: %s. Twoje dane podane w formularzu: %s, %s. Odpiszę jak najszybciej będę mógł.',
-                $contactDataFromForm->getContent(),
-                $contactDataFromForm->getName(),
-                $contactDataFromForm->getEmail()
+                $contactData->getContent(),
+                $contactData->getName(),
+                $contactData->getEmail()
             ),
             'text/plain'
         );
 
-        return View::create(['formData' => $contactDataFromForm], Response::HTTP_OK);
+        return View::create(['formData' => $contactData], Response::HTTP_OK);
     }
 }

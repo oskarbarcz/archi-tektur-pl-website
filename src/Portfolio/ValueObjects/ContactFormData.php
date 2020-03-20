@@ -6,9 +6,7 @@ use JMS\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Represents form data
- *
- * @package App\ValueObjects
+ * Represents contact form data sent by frontend side in API
  */
 class ContactFormData
 {
@@ -17,100 +15,70 @@ class ContactFormData
      * @Assert\NotBlank()
      * @Assert\Length(min="3", max="64")
      * @Serializer\Type("string")
-     * @var string
      */
-    private $name;
+    private ?string $name = null;
 
     /**
      * @Assert\NotNull()
      * @Assert\NotBlank()
      * @Assert\Email()
      * @Serializer\Type("string")
-     * @var string
      */
-    private $email;
+    private ?string $email = null;
 
     /**
      * @Assert\NotNull()
      * @Assert\NotBlank()
      * @Assert\Choice({"webpage", "application", "programming", "other"})
      * @Serializer\Type("string")
-     * @var string
      */
-    private $reason;
+    private ?string $reason = null;
 
     /**
      * @Assert\NotNull()
      * @Assert\Length(min="10", max="10000")
      * @Serializer\Type("string")
-     * @var string
      */
-    private $content;
+    private ?string $content = null;
 
-    /** @return string */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     * @return ContactFormData
-     */
     public function setName(string $name): ContactFormData
     {
         $this->name = $name;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getEmail(): string
     {
         return $this->email;
     }
 
-    /**
-     * @param string $email
-     * @return ContactFormData
-     */
     public function setEmail(string $email): ContactFormData
     {
         $this->email = $email;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getReason(): string
     {
         return $this->reason;
     }
 
-    /**
-     * @param string $reason
-     * @return ContactFormData
-     */
     public function setReason(string $reason): ContactFormData
     {
         $this->reason = $reason;
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getContent(): string
     {
         return $this->content;
     }
 
-    /**
-     * @param string $content
-     * @return ContactFormData
-     */
     public function setContent(string $content): ContactFormData
     {
         $this->content = $content;

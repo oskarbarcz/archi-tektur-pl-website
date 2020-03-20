@@ -21,7 +21,6 @@ class PortfolioController extends AbstractController
      *     "pl": "/",
      *     "en": "/en"
      * }, name="index")
-     * @return Response
      */
     public function portfolio(): Response
     {
