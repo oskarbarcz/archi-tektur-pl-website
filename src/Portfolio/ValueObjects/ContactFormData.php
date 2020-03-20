@@ -2,7 +2,6 @@
 
 namespace App\Portfolio\ValueObjects;
 
-use JMS\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -14,7 +13,6 @@ class ContactFormData
      * @Assert\NotNull()
      * @Assert\NotBlank()
      * @Assert\Length(min="3", max="64")
-     * @Serializer\Type("string")
      */
     private ?string $name = null;
 
@@ -22,7 +20,6 @@ class ContactFormData
      * @Assert\NotNull()
      * @Assert\NotBlank()
      * @Assert\Email()
-     * @Serializer\Type("string")
      */
     private ?string $email = null;
 
@@ -30,14 +27,12 @@ class ContactFormData
      * @Assert\NotNull()
      * @Assert\NotBlank()
      * @Assert\Choice({"webpage", "application", "programming", "other"})
-     * @Serializer\Type("string")
      */
     private ?string $reason = 'other';
 
     /**
      * @Assert\NotNull()
      * @Assert\Length(min="10", max="10000")
-     * @Serializer\Type("string")
      */
     private ?string $content = null;
 
