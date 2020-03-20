@@ -13,8 +13,6 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * Controls endpoints for mailing purposes
- *
- * @package App\Controller
  */
 class FormSubmitController extends AbstractController
 {

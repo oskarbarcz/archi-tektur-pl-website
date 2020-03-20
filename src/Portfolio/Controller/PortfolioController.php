@@ -8,9 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * PortfolioController
- *
- * @Route(name="portfolio_")
- * @package Controller
  */
 class PortfolioController extends AbstractController
 {
@@ -20,7 +17,7 @@ class PortfolioController extends AbstractController
      * @Route({
      *     "pl": "/",
      *     "en": "/en"
-     * }, name="index")
+     * }, name="portfolio_index")
      */
     public function portfolio(): Response
     {
@@ -31,7 +28,7 @@ class PortfolioController extends AbstractController
      * @Route({
      *     "pl": "/blog",
      *     "en": "/blog"
-     * }, name="blog")
+     * }, name="portfolio_blog")
      */
     public function blog(): Response
     {
@@ -42,7 +39,7 @@ class PortfolioController extends AbstractController
      * @Route({
      *     "pl": "/przetwarzanie-danych-osobowych",
      *     "en": "/gdpr"
-     * }, name="gdpr")
+     * }, name="portfolio_gdpr")
      */
     public function gdpr(): Response
     {
