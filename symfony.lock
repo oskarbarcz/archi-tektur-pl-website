@@ -305,12 +305,6 @@
             "config/routes.yaml"
         ]
     },
-    "symfony/security-core": {
-        "version": "v4.2.8"
-    },
-    "symfony/security-csrf": {
-        "version": "v4.2.8"
-    },
     "symfony/service-contracts": {
         "version": "v1.1.5"
     },
