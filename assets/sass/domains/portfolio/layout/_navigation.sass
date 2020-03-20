@@ -4,7 +4,8 @@ $navBreakPoint: 985px
   position: sticky
   top: 0
   width: 100%
-  @include shadow(1)
+  //@include shadow(1)
+  border-bottom: 1px solid #CCCCCC
   background: #FFFFFF
   display: flex
   flex-direction: row
@@ -42,13 +43,12 @@ $navBreakPoint: 985px
     @media (max-width: $navBreakPoint)
       visibility: visible
   &_logo
-    height: 50px
+    height: 45px
     margin: 5px 0
     transition: ease-in-out 0.1s
     @media (max-width: $navBreakPoint)
+      height: 40px
       margin-left: 20px
-    &:hover, &:focus
-      transform: scale(1.05)
   &_links
     width: 100%
     display: flex
@@ -75,7 +75,7 @@ $navBreakPoint: 985px
     padding: 13px
     font-size: 1.3em
     height: 70px
-    transition: 0.1s ease-in-out
+    transition: 0.05s ease-in-out
     @media (max-width: $navBreakPoint)
       padding: 4px 20px
       height: auto

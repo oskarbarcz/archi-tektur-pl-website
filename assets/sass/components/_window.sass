@@ -3,12 +3,12 @@
   border-radius: 5px
   background: #F8F9FA
   margin: 0 auto
-  @include shadow(3)
+  @include shadow(1)
   @media (max-width: 800px)
     width: 90%
   &_bar
     position: relative
-    @include shadow(1)
+    border-bottom: 1px solid #CCCCCC
     border-top-left-radius: 5px
     border-top-right-radius: 5px
     display: flex
@@ -25,7 +25,6 @@
     text-align: center
     @media (max-width: 400px)
       text-align: left
-
   &_small-icons
     display: flex
     position: absolute
