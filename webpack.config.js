@@ -12,22 +12,22 @@ Encore
     /* FEATURE CONFIG */
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
-    .cleanupOutputBeforeBuild()
-    .enableBuildNotifications()
-    .enableSourceMaps(!Encore.isProduction())
-    .enableVersioning(Encore.isProduction())
-    .configureBabel((config) => {
-        config.plugins.push('@babel/plugin-proposal-class-properties');
-    })
-    .configureBabelPresetEnv((config) => {
-        config.useBuiltIns = 'usage';
-        config.corejs = 3;
-    })
-    .enableSassLoader()
-    .copyFiles({
-        from: './assets/images',
-        to: 'images/[path][name].[hash:8].[ext]'
-    })
-    .enableIntegrityHashes(Encore.isProduction());
+  .cleanupOutputBeforeBuild()
+  .enableBuildNotifications()
+  .enableSourceMaps(!Encore.isProduction())
+  .enableVersioning(Encore.isProduction())
+  .configureBabel((config) => {
+      config.plugins.push('@babel/plugin-proposal-class-properties');
+  })
+  .configureBabelPresetEnv((config) => {
+      config.useBuiltIns = 'usage';
+      config.corejs = 3;
+  })
+  .enableSassLoader()
+  .copyFiles({
+      from: './assets/images',
+      to: 'images/[path][name].[hash:8].[ext]'
+  })
+  .enableIntegrityHashes(Encore.isProduction());
 
 module.exports = Encore.getWebpackConfig();
