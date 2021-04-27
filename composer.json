@@ -8,20 +8,16 @@
     "ext-json": "*",
     "doctrine/annotations": "^1.7",
     "sensio/framework-extra-bundle": "^5.4",
-    "symfony/apache-pack": "1.0.*",
-    "symfony/asset": "5.*",
-    "symfony/console": "5.*",
-    "symfony/dotenv": "5.*",
-    "symfony/flex": "1.4.*",
-    "symfony/framework-bundle": "5.*",
-    "symfony/swiftmailer-bundle": "^3.2",
-    "symfony/twig-bundle": "5.*",
-    "symfony/validator": "5.*",
+    "symfony/asset": "^5.2",
+    "symfony/console": "^5.2",
+    "symfony/dotenv": "^5.2",
+    "symfony/flex": "^1.12.2",
+    "symfony/framework-bundle": "^5.2",
+    "symfony/twig-bundle": "^5.2",
     "symfony/webpack-encore-bundle": "1.7.*",
-    "symfony/yaml": "5.*",
-    "twig/extensions": "1.*",
-    "symfony/stopwatch": "5.*",
-    "symfony/web-profiler-bundle": "5.*"
+    "symfony/yaml": "^5.2",
+    "symfony/stopwatch": "^5.2",
+    "symfony/web-profiler-bundle": "^5.2"
   },
   "config": {
     "preferred-install": {
@@ -65,16 +61,10 @@
   "extra": {
     "symfony": {
       "allow-contrib": false,
-      "require": "5.*"
+      "require": "^5.2"
     }
   },
   "require-dev": {
-    "phpmd/phpmd": "2.8.*",
-    "phpstan/phpstan": "0.12.*",
-    "phpunit/phpunit": "9.0.*",
-    "roave/security-advisories": "dev-master",
-    "symfony/css-selector": "5.0.*",
-    "symfony/phpunit-bridge": "5.0.*",
-    "symfony/test-pack": "1.0.*"
+    "roave/security-advisories": "dev-master"
   }
 }
