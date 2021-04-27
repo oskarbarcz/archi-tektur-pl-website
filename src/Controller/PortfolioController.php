@@ -21,28 +21,6 @@ class PortfolioController extends AbstractController
      */
     public function portfolio(): Response
     {
-        return $this->render('portfolio.html.twig');
-    }
-
-    /**
-     * @Route({
-     *     "pl": "/blog",
-     *     "en": "/blog"
-     * }, name="portfolio_blog")
-     */
-    public function blog(): Response
-    {
-        return $this->render('blog-soon.html.twig');
-    }
-
-    /**
-     * @Route({
-     *     "pl": "/przetwarzanie-danych-osobowych",
-     *     "en": "/gdpr"
-     * }, name="portfolio_gdpr")
-     */
-    public function gdpr(): Response
-    {
-        return $this->render('subpages/gdpr.html.twig');
+        return $this->render('landing/index.html.twig');
     }
 }

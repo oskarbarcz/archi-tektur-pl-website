@@ -1,46 +1,33 @@
-var Encore = require('@symfony/webpack-encore');
-var dotenv = require('dotenv');
+const Encore = require('@symfony/webpack-encore');
+
+if (!Encore.isRuntimeEnvironmentConfigured()) {
+    Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
+}
 
 Encore
-  .setOutputPath('public/build/')
-  .setPublicPath('/build')
-  .addEntry('app', './assets/ts/app.ts')
-  .enableSingleRuntimeChunk()
-  .cleanupOutputBeforeBuild()
-  .enableBuildNotifications()
-  .enableSourceMaps(!Encore.isProduction())
-  .enableVersioning(Encore.isProduction())
-  .configureBabel(() => {}, {
-    useBuiltIns: 'usage',
-    corejs: 3,
-  })
-  .configureDefinePlugin(options => {
-    let env = dotenv.config();
-    console.log(env);
-
-    if (Encore.isProduction()) {
-      env = dotenv.config({
-        path: process.cwd() + '/.env.prod',
-      });
-    } else {
-      env = dotenv.config({
-        path: process.cwd() + '/.env.dev',
-      });
-    }
-
-    if (env.error) {
-      throw env.error;
-    }
-
-    options['process.env'].DOMAIN_PATH = JSON.stringify(env.parsed.DOMAIN_PATH);
-  })
-  .enableSassLoader()
-  .enablePostCssLoader((options) => {
-    options.config = {
-      path: 'pos',
-    };
-  })
-  .enableTypeScriptLoader()
-  .enableIntegrityHashes();
+    .setOutputPath('public/build/')
+    .setPublicPath('/build')
+    /* ENTRY CONFIG */
+    .addEntry('landing', './assets/scripts/landing.js')
+    /* FEATURE CONFIG */
+    .splitEntryChunks()
+    .enableSingleRuntimeChunk()
+    .cleanupOutputBeforeBuild()
+    .enableBuildNotifications()
+    .enableSourceMaps(!Encore.isProduction())
+    .enableVersioning(Encore.isProduction())
+    .configureBabel((config) => {
+        config.plugins.push('@babel/plugin-proposal-class-properties');
+    })
+    .configureBabelPresetEnv((config) => {
+        config.useBuiltIns = 'usage';
+        config.corejs = 3;
+    })
+    .enableSassLoader()
+    .copyFiles({
+        from: './assets/images',
+        to: 'images/[path][name].[hash:8].[ext]'
+    })
+    .enableIntegrityHashes(Encore.isProduction());
 
 module.exports = Encore.getWebpackConfig();
