@@ -59,7 +59,7 @@ This section simply shows what tools and technologies I used while working on th
 I don't see any reason why you want to download it and run locally, but surely you can do it.
 1. Clone the repo
 ```sh
-git clone https:://github.com/archi-tektur/portfolio.git
+git clone https:://github.com/archi-tektur/landing.git
 ```
 2. Download and install PHP dependiencies in order to run server-side code
 ```sh

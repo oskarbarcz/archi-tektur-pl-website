@@ -2,7 +2,7 @@ version: "3.1"
 services:
   webserver:
     image: nginx:alpine
-    container_name: portfolio-web
+    container_name: landing-web
     working_dir: /application
     volumes:
       - .:/application
@@ -11,7 +11,7 @@ services:
       - "80:80"
   php-fpm:
     build: .docker/php-fpm
-    container_name: portfolio-php
+    container_name: landing-php
     working_dir: /application
     volumes:
       - .:/application
