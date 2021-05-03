@@ -1,4 +1,9 @@
 .navigation
+  position: sticky
+  top: 0
+  background: $color-dark
+  z-index: 10
+  @include shadow(1)
   &__limiter
     max-width: 1400px
     margin: 0 auto
@@ -15,9 +20,10 @@
     display: inline-block
     padding: 15px 25px
     text-decoration: none
-    color: $color-dark
-    font-weight: 700
+    color: $color-white
+    font-size: 0.9rem
+    transition: all 0.1s ease-in-out
     &:focus, &:hover
-      background: darken($color-white, 10)
+      background: lighten($color-dark, 10)
 
 
